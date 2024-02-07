@@ -1,11 +1,14 @@
-import { Button, Image, Text, TextInput, View } from "react-native"
+import { Image, Text, TextInput, Touchable, TouchableOpacity, View } from "react-native"
 import { Container } from "../../components/Container/Style"
 import { Logo } from "../../components/Logo/Styled"
-import { Title } from "../../components/Title/Style"
+import { ButtonGoogleTitle, ButtonTitle, Title } from "../../components/Title/Style"
 import { Input } from "../../components/Input/Style"
-import { LinkMedium } from "../../components/Links/Style"
+import { LinkMedium, LinkOppacity, TextAccountLink } from "../../components/Links/Style"
+import { ButtonGoogle, Button } from "../../components/Button/Style"
+import { Fontisto } from '@expo/vector-icons';
+import { ContentAccount, TextAccount } from "./Style"
 
-export const Login = () => {
+export const Login = ({ navigation }) => {
     return (
         <Container>
 
@@ -23,19 +26,26 @@ export const Login = () => {
                 secureTextEntry={true}
 
             />
-            <LinkMedium>Esqueceu sua senha?</LinkMedium>
+            <LinkOppacity>
+                <LinkMedium onPress={() => navigation.navigate("RecuperarSenha")}>Esqueceu sua senha?</LinkMedium>
+            </LinkOppacity>
 
+            {/* <TouchableOpacity></TouchableOpacity> */}
 
-
-            {/* <Button>
-                <ButtonTitle></ButtonTitle>
+            <Button>
+                <ButtonTitle>Entrar</ButtonTitle>
             </Button>
             <ButtonGoogle>
-                <ButtonGoogleTitle></ButtonGoogleTitle>
+                <Fontisto name="google" size={20} color="#496BBA" />
+                <ButtonGoogleTitle> ENTRAR COM GOOGLE</ButtonGoogleTitle>
+
             </ButtonGoogle>
+
             <ContentAccount>
-                <TextAccount>Não tem conta? Crie uma conta agora!</TextAccount>
-            </ContentAccount> */}
+                <TextAccount>Não tem conta? <TextAccountLink> Crie uma conta agora! </TextAccountLink> </TextAccount>
+            </ContentAccount>
+
+
 
 
 

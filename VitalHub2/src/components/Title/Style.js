@@ -8,3 +8,18 @@ export const Title = styled.Text`
 
     
 `
+
+export const ButtonTitle = styled.Text`
+    font-size: 15px;
+    font-family: "MontserratAlternates_700Bold";
+    color: white;
+    text-transform: uppercase;
+`
+
+export const ButtonGoogleTitle = styled(ButtonTitle)`
+    color: #496BBA;
+`
+export const ButtonGoogleTitleG = styled.Image`
+    width: 20px;
+    height: 20px;   
+`

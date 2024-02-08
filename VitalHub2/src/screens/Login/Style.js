@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const ContentAccount = styled.View`
     margin-top: 20px;
     width: 90%;
-    border: 1px solid yellow;
+    /* border: 1px solid yellow; */
     flex-direction: row;
     align-self: center;
     justify-content: center;

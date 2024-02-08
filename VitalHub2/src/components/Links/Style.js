@@ -18,8 +18,14 @@ export const TextAccountLink = styled.Text`
 export const LinkOppacity = styled.TouchableOpacity`
     /* border: 1px solid green; */
     padding-top: 10px;
-    margin-top: 10px;
     margin-bottom: 15px;
     align-self: flex-start;
     margin-left: 20px;
+`
+
+
+export const LinkOppacityMarginTop = styled.TouchableOpacity`
+
+    margin-top: 20px;
+
 `

@@ -1,12 +1,13 @@
 import { Image, Text, TextInput, Touchable, TouchableOpacity, View } from "react-native"
 import { Container } from "../../components/Container/Style"
-import { Logo } from "../../components/Logo/Styled"
+import { Logo } from "../../components/Logo/Style"
 import { ButtonGoogleTitle, ButtonTitle, Title } from "../../components/Title/Style"
 import { Input } from "../../components/Input/Style"
 import { LinkMedium, LinkOppacity, TextAccountLink } from "../../components/Links/Style"
 import { ButtonGoogle, Button } from "../../components/Button/Style"
 import { Fontisto } from '@expo/vector-icons';
 import { ContentAccount, TextAccount } from "./Style"
+import { BoxInput, BoxMarginDown } from "../../components/Box/Style"
 
 export const Login = ({ navigation }) => {
     return (
@@ -17,15 +18,16 @@ export const Login = ({ navigation }) => {
 
 
 
-
+            <BoxInput>
             <Input
                 placeholder="Email"
             />
             <Input
                 placeholder="Senha"
                 secureTextEntry={true}
-
             />
+            </BoxInput>
+          
             <LinkOppacity>
                 <LinkMedium onPress={() => navigation.navigate("RecuperarSenha")}>Esqueceu sua senha?</LinkMedium>
             </LinkOppacity>
@@ -42,7 +44,7 @@ export const Login = ({ navigation }) => {
             </ButtonGoogle>
 
             <ContentAccount>
-                <TextAccount>Não tem conta? <TextAccountLink> Crie uma conta agora! </TextAccountLink> </TextAccount>
+                <TextAccount>Não tem conta? <TextAccountLink onPress={() => navigation.navigate("CriarConta")}> Crie uma conta agora! </TextAccountLink> </TextAccount>
             </ContentAccount>
 
 

@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const Input = styled.TextInput.attrs({
     placeholderTextColor: '#34898f'
     })`
-    width: 90%;
+    width: 100%;
     height: 53px;
     padding: 16px;
     margin-top: 15px;

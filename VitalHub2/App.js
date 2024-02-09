@@ -13,6 +13,10 @@ import { Quicksand_500Medium,Quicksand_600SemiBold } from '@expo-google-fonts/qu
 import { VerificarEmail } from './src/screens/VerificarEmail/VerificarEmail';
 import { RedefinirSenha } from './src/screens/RedefinirSenha/RedefinirSenha';
 import { CriarConta } from './src/screens/CriarConta/CriarConta';
+import { InsercaoPontuario } from './src/screens/Medico/InsercaoPontuario/InsercaoPontuario';
+import { useState } from 'react';
+import { InsercaoPontuarioEditable } from './src/screens/Medico/InsercaoPontuario/InsercaoPontuario-Editable';
+import { Perfil01 } from './src/screens/Perfil/Perfil01/Perfil01';
 
 //instÂncia do StackNavigator
 const Stack = createNativeStackNavigator();
@@ -26,6 +30,16 @@ export default function App() {
   if (!fontsLoaded && !fontsError) {
     return null;
   }
+
+  // const [descricaoPontuario, setDescicaoConsulta] = useState("")
+  // const [diagnósticoPontuario, setDiagnósticoPontuario ] = useState("")
+  // const [prescricaoPontuaio, setPrescricaoPontuaio ] = useState("")
+
+  // function CadastroDePaciente(){
+  //     setDescicaoConsulta()
+  //     setPrescricaoPontuaio()
+  //     setDiagnósticoPontuario()
+  // } 
 
   return (
     //Navegação 
@@ -73,6 +87,23 @@ export default function App() {
           component={CriarConta}
           options={{ title: "CriarConta" }}
         />
+
+        <Stack.Screen
+          name='InsercaoPontuario'
+          component={InsercaoPontuario}
+          options={{ title: "InsercaoPontuario" }}
+        />
+        <Stack.Screen
+          name='InsercaoPontuarioEditable'
+          component={InsercaoPontuarioEditable}
+          options={{ title: "InsercaoPontuarioEditable" }}
+        />
+        <Stack.Screen
+          name='Perfil01'
+          component={Perfil01}
+          options={{ title: "Perfil01" }}
+        />
+       
       </Stack.Navigator>
     </NavigationContainer>
   );

@@ -24,3 +24,15 @@ export const BoxMarginDown = styled.View`
 export const BoxInput = styled.View`
     width: 90%;
 `
+
+export const BoxRow = styled.View`
+    flex-direction: row;
+    justify-content: center;
+    width: 80%;
+`
+
+export const BoxTitleLabel = styled.View`
+    justify-content: flex-start;
+    width: 90%;
+    /* border: 1px solid red; */
+`

@@ -1,4 +1,4 @@
-import { BoxMarginDown } from "../../components/Box/Style"
+import { BoxInput, BoxMarginDown } from "../../components/Box/Style"
 import { Button } from "../../components/Button/Style"
 import { Container } from "../../components/Container/Style"
 import { Input } from "../../components/Input/Style"
@@ -15,11 +15,11 @@ export const CriarConta = ({navigation}) => {
             <Title>Criar Conta</Title>
 
             <Subtitle>Insira seu endereço de e-mail e senha para realizar seu cadastro.</Subtitle>
-            <BoxMarginDown>
+            <BoxInput>
                 <Input placeholder="Usuário ou E-mail" />
                 <Input placeholder="Senha" />
                 <Input placeholder="Confirmar Senha" />
-            </BoxMarginDown>
+            </BoxInput>
 
 
             <Button>

@@ -28,6 +28,20 @@ export const Navegacao = ({ navigation }) => {
                     title="Criar Conta"
                     onPress={() => navigation.navigate("CriarConta")}
                 />
+
+                <Title>Medico</Title>
+                <Button
+                    title="Insercao Pontuario"
+                    onPress={() => navigation.navigate("InsercaoPontuario")}
+                />
+                <Button
+                    title=" InsercaoPontuarioEditable"
+                    onPress={() => navigation.navigate("InsercaoPontuarioEditable")}
+                />
+                <Button
+                    title=" Perfil01"
+                    onPress={() => navigation.navigate("Perfil01")}
+                />
             </NavigationBox>
 
         </View>

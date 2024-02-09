@@ -28,11 +28,13 @@ export const RecuperarSenha = ({ navigation }) => {
                 Digite abaixo seu email cadastrado que enviaremos um link para recuperação de senha
             </Subtitle>
 
-            <BoxMarginDown>
+            <BoxInput>
                 <Input
                     placeholder="Usuario de Email"
                 />
-            </BoxMarginDown>
+            </BoxInput>
+
+
 
 
             <Button>

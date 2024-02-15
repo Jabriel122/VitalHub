@@ -17,6 +17,8 @@ import { InsercaoPontuario } from './src/screens/Medico/InsercaoPontuario/Inserc
 import { useState } from 'react';
 import { InsercaoPontuarioEditable } from './src/screens/Medico/InsercaoPontuario/InsercaoPontuario-Editable';
 import { Perfil01 } from './src/screens/Perfil/Perfil01/Perfil01';
+import { Perfil02 } from './src/screens/Perfil/Perfil02/Perfil02';
+import { Home } from './src/screens/Home/Home';
 
 //instÂncia do StackNavigator
 const Stack = createNativeStackNavigator();
@@ -102,6 +104,19 @@ export default function App() {
           name='Perfil01'
           component={Perfil01}
           options={{ title: "Perfil01" }}
+        />
+
+        <Stack.Screen
+          name='Perfil02'
+          component={Perfil02}
+          options={{ title: "Perfil02" }}
+        />
+       
+
+        <Stack.Screen
+          name='Home'
+          component={Home}
+          options={{ title: "Home" }}
         />
        
       </Stack.Navigator>

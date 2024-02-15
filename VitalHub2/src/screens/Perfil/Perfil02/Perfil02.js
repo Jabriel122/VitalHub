@@ -6,22 +6,25 @@ import { Subtitle } from "../../../components/Subtitle/Style"
 import { Label, TextLabel, TitleLabel } from "../../../components/Label/Style"
 import { Button, ButtonEditar } from "../../../components/Button/Style"
 import { LinkOppacityMarginBottom, LinkOppacityMarginTop, TextAccountLink } from "../../../components/Links/Style"
-import { Box, BoxInput, BoxRow, BoxTitleLabel } from "../../../components/Box/Style"
+import { Box, BoxInput, BoxRow, BoxShadow, BoxTitleLabel } from "../../../components/Box/Style"
 
-export const Perfil01 = ({ fieldwidth }) => {
+export const Perfil02 = ({ fieldwidth }) => {
 
     return (
 
         <Container>
 
             <ScrollForm>
-                <ProfilePicture source={require("../../../assets/PofilePicture/Cillian Murphy.png")} />
                 <View style={{ justifyContent: "center", alignItems: "center" }}>
-                    <Title>NOME</Title>
+                <ProfilePicture source={require("../../../assets/PofilePicture/Cillian Murphy.png")} />
+                    <BoxShadow>
+                        <Title>Gabriel NadaMArchetti</Title>
 
-                    <Subtitle>
-                        IDADE Email
-                    </Subtitle>
+                        <Subtitle>
+                            gabs@femail.com
+                        </Subtitle>
+                    </BoxShadow>
+
 
                     <BoxTitleLabel>
                         <TitleLabel>Data de Nascimento:</TitleLabel>

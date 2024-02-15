@@ -1,5 +1,5 @@
 import { View } from "react-native"
-import { Box, BoxInput, BoxRow } from "../../../components/Box/Style"
+import { Box, BoxInput, BoxRow, BoxTitleLabel } from "../../../components/Box/Style"
 import { Container, ScrollForm } from "../../../components/Container/Style"
 import { Label, TextLabel, TitleLabel } from "../../../components/Label/Style"
 import { ProfilePicture } from "../../../components/PofilePicture/Style"
@@ -9,7 +9,7 @@ import { Button, ButtonEditar } from "../../../components/Button/Style"
 import { LinkOppacityMarginTop, TextAccountLink } from "../../../components/Links/Style"
 import { Input } from "../../../components/Input/Style"
 
-export const InsercaoPontuarioEditable = ({ }) => {
+export const InsercaoPontuarioEditable = ({fieldwidth}) => {
     return (
         <Container>
 
@@ -22,22 +22,26 @@ export const InsercaoPontuarioEditable = ({ }) => {
                         IDADE Email
                     </Subtitle>
 
-
-                    <TitleLabel>Descrição da consulta</TitleLabel>
-                    <BoxInput>
+                    <BoxTitleLabel>
+                        <TitleLabel>Descrição da consulta</TitleLabel>
+                    </BoxTitleLabel>
+                    <BoxInput fieldwidth = {90}>
                         <Input placeholder="Descrição" />
                     </BoxInput>
 
 
-
-                    <TitleLabel>Diagnóstico do paciente</TitleLabel>
-                    <BoxInput>
-                        <Input placeholder="Diagnóstico"/>
+                    <BoxTitleLabel>
+                        <TitleLabel>Diagnóstico do paciente</TitleLabel>
+                    </BoxTitleLabel>
+                    <BoxInput fieldwidth={90}>
+                        <Input placeholder="Diagnóstico" />
                     </BoxInput>
 
-                    <TitleLabel>Prescrição médica</TitleLabel>
-                    <BoxInput>
-                        <Input placeholder="Prescrição Médica"/>
+                    <BoxTitleLabel>
+                        <TitleLabel>Prescrição médica</TitleLabel>
+                    </BoxTitleLabel>
+                    <BoxInput fieldwidth ={90}>
+                        <Input placeholder="Prescrição Médica" />
                     </BoxInput>
 
                     <Button>

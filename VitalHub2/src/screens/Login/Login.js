@@ -9,7 +9,7 @@ import { Fontisto } from '@expo/vector-icons';
 import { ContentAccount, TextAccount } from "./Style"
 import { BoxInput, BoxMarginDown } from "../../components/Box/Style"
 
-export const Login = ({ navigation }) => {
+export const Login = ({ navigation, fieldwidth }) => {
     return (
         <Container>
 
@@ -18,16 +18,16 @@ export const Login = ({ navigation }) => {
 
 
 
-            <BoxInput>
-            <Input
-                placeholder="Email"
-            />
-            <Input
-                placeholder="Senha"
-                secureTextEntry={true}
-            />
+            <BoxInput fieldwidth={90}>
+                <Input
+                    placeholder="Email"
+                />
+                <Input
+                    placeholder="Senha"
+                    secureTextEntry={true}
+                />
             </BoxInput>
-          
+
             <LinkOppacity>
                 <LinkMedium onPress={() => navigation.navigate("RecuperarSenha")}>Esqueceu sua senha?</LinkMedium>
             </LinkOppacity>

@@ -4,10 +4,12 @@ export const Label = styled.View`
     background-color: #F5F3F3;
     border: 2px solid #F5F3F3;
     border-radius: 5px;
-    width: 90%;
+    width: ${props => `${props.fieldwidth}%`};
     height: auto;
     margin-top: 10px;
 `
+
+
 
 export const TextLabel = styled.Text`
     font-family: "MontserratAlternates_500Medium";

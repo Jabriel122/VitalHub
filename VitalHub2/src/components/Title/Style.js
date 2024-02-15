@@ -18,6 +18,11 @@ export const ButtonTitle = styled.Text`
     text-transform: uppercase;
 `
 
+export const ButtonQuitTitle = styled(ButtonTitle)`
+        margin-right: 40px;
+    margin-left: 40px;
+`
+
 export const ButtonGoogleTitle = styled(ButtonTitle)`
     color: #496BBA;
 `

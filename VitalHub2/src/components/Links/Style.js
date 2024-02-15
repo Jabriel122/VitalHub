@@ -29,3 +29,8 @@ export const LinkOppacityMarginTop = styled.TouchableOpacity`
     margin-top: 20px;
 
 `
+
+export const LinkOppacityMarginBottom = styled.TouchableOpacity`
+
+    margin-bottom: 20px;
+`

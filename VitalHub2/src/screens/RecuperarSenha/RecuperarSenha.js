@@ -9,7 +9,7 @@ import { Box, BoxInput } from "../../components/Box/Style"
 import { BoxMarginDown } from "../../components/Box/Style"
 
 
-export const RecuperarSenha = ({ navigation }) => {
+export const RecuperarSenha = ({ navigation,fieldwidth }) => {
     return (
 
         <Container>
@@ -28,7 +28,7 @@ export const RecuperarSenha = ({ navigation }) => {
                 Digite abaixo seu email cadastrado que enviaremos um link para recuperação de senha
             </Subtitle>
 
-            <BoxInput>
+            <BoxInput fieldwidth={90}>
                 <Input
                     placeholder="Usuario de Email"
                 />

@@ -7,7 +7,7 @@ import { Logo } from "../../components/Logo/Style"
 import { Subtitle } from "../../components/Subtitle/Style"
 import { ButtonTitle, Title } from "../../components/Title/Style"
 
-export const CriarConta = ({navigation}) => {
+export const CriarConta = ({navigation, fieldwidth}) => {
     return (
         <Container>
             <Logo source={require("../../assets/VitalHub_Logo4.png")} />
@@ -15,7 +15,7 @@ export const CriarConta = ({navigation}) => {
             <Title>Criar Conta</Title>
 
             <Subtitle>Insira seu endereço de e-mail e senha para realizar seu cadastro.</Subtitle>
-            <BoxInput>
+            <BoxInput fieldwidth = {90}>
                 <Input placeholder="Usuário ou E-mail" />
                 <Input placeholder="Senha" />
                 <Input placeholder="Confirmar Senha" />

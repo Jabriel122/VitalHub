@@ -1,11 +1,14 @@
 import styled from "styled-components";
 // import lib linear LinearGradient
-import {LinearGradient} from 'expo-linear-gradient'
+import { LinearGradient } from 'expo-linear-gradient'
 
 export const Container = styled.SafeAreaView`
     flex: 1;
     align-items: center;
     background-color: white;
+`
+export const ContainerFB = styled(Container)`
+    background-color: #FBFBFB;
 `
 
 export const ScrollForm = styled.ScrollView`
@@ -25,12 +28,21 @@ export const TopContainer = styled.View`
 
 export const ContainerHeader = styled(LinearGradient).attrs({
     colors: ['#60BFC5', '#496BBA'],
-    start: {x: -0.05, y:1.08},
-    end: {x: 1, y: 0}
+    start: { x: -0.05, y: 1.08 },
+    end: { x: 1, y: 0 }
 })`
     width:100%;
     height: 144px;
     border-radius: 0px 0px 15px 15px ;
+    justify-content: center;
+    align-items: center;
+
+    box-shadow: 0px 0px 10px  black;
+    shadow-color: black;
+    shadow-offser: 0px 4px;
+    shadow-opacity: 0.15;
+    shadow-radius:15px;
+    elevation: 5;
     
 `
 

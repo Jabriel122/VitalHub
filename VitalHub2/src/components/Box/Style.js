@@ -29,6 +29,7 @@ export const BoxRow = styled.View`
     flex-direction: row;
     justify-content: center;
     width: 90%;
+    /* border: 1px solid red; */
 
 `
 

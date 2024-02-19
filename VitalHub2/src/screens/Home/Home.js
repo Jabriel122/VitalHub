@@ -1,12 +1,25 @@
-import { BoxRow, BoxUser } from "../../components/Box/Style"
+import { useState } from "react"
 import { LittleButtons } from "../../components/Button/Style"
 import { CalendarHome } from "../../components/CalandarHome/CalendarHome"
+import { Card } from "../../components/Card/Card"
 import { Container, ContainerFB } from "../../components/Container/Style"
 import { Header } from "../../components/Header/Header"
 import { ButtonGoogleTitle, ButtonTitle, TitleLitteButton } from "../../components/Title/Style"
-import { LineBtw } from "./Style"
+import { CardList, LineBtw } from "./Style"
+import { Apointments } from "../../components/Apointments/Apointments"
 
-export const Home = ({ fieldwidth, bkcolor, bcolor, color, fsize }) => {
+const Consulta = [
+    { id: 1, nome: "GABS", situacao: "pendente" },
+    { id: 2, nome: "Felipe", situacao: "realizado" },
+    { id: 3, nome: "Nayas", situacao: "pendente" },
+    { id: 4, nome: "Lucass", situacao: "realizado" },
+    { id: 5, nome: "Diogo", situacao: "cancelado" },
+]
+
+export const Home = () => {
+
+    const [statusLista, setStatusLista] = useState();
+
     return (
         <ContainerFB>
             {/* Header */}
@@ -15,45 +28,31 @@ export const Home = ({ fieldwidth, bkcolor, bcolor, color, fsize }) => {
             <CalendarHome />
 
             <LineBtw>
-                <LittleButtons
-                    fieldwidth={30}
-                    bkcolor={'496BBA'}
-                    bcolor={'496BBA'}
-                >
-                    <TitleLitteButton
-                        fsize={12}
-                        color={'FBFBFB'}
-                    >
-                        Agendadas
-                    </TitleLitteButton>
-                </LittleButtons>
-                <LittleButtons
-                    fieldwidth={30}
-                    bkcolor={'FBFBFB'}
-                    bcolor={'496BBA'}
-                >
-                    <TitleLitteButton
-                        fsize={12}
-                        color={'496BBA'}
-                    >
-                        Realizadas
-                    </TitleLitteButton>
-                </LittleButtons>
-                <LittleButtons
-                    fieldwidth={30}
-                    bkcolor={'FBFBFB'}
-                    bcolor={'496BBA'}
-                >
-                    <TitleLitteButton
-                        fsize={12}
-                        color={'496BBA'}
-                    >
-                        Realizadas
-                    </TitleLitteButton>
-                </LittleButtons>
+                <Apointments
+                    clickButton={statusLista === "pendente"}
+                    onPress={() => setStatusLista("pendente")}
+                    textButton={"Agendado"}
+                />
+                <Apointments
+                    textButton={"Realizado"}
+                    clickButton={statusLista === "realizado"}
+                    onPress={() => setStatusLista("realizado")}
+                />
+                <Apointments 
+                    textButton={"Cancelados"}
+                    clickButton={statusLista === "cancelado"}
+                    onPress={() => setStatusLista("cancelado")}
+                />
             </LineBtw>
 
+            <CardList
+                data ={Consulta}
+                renderItem={(item) =><Card />}
+                keyExtractor={item => Consulta.id}
+            />
             
+
+
         </ContainerFB>
     )
 

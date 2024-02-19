@@ -31,8 +31,3 @@ export const ButtonGoogleTitleG = styled.Image`
     height: 20px;   
 `
 
-export const TitleLitteButton = styled.Text`
-    font-size: ${props => `${props.fsize}px`} ;
-    font-family: "MontserratAlternates_700Bold";
-    color: ${props => `#${props.color}`} ;
-`

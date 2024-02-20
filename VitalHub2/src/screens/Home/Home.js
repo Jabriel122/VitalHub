@@ -7,6 +7,8 @@ import { Header } from "../../components/Header/Header"
 import { ButtonGoogleTitle, ButtonTitle, TitleLitteButton } from "../../components/Title/Style"
 import { CardList, LineBtw } from "./Style"
 import { Apointments } from "../../components/Apointments/Apointments"
+import { CancelarConsutlaModel } from "../Model/CancelarConsultaModel/CancelarConsultaModel"
+import { Modal } from "react-native"
 
 const Consulta = [
     { id: 1, nome: "GABS", situacao: "pendente" },
@@ -19,6 +21,8 @@ const Consulta = [
 export const Home = () => {
 
     const [statusLista, setStatusLista] = useState();
+    const [modalVisible, setModalVisible] = useState(false);
+
 
     return (
         <ContainerFB>
@@ -38,7 +42,7 @@ export const Home = () => {
                     clickButton={statusLista === "realizado"}
                     onPress={() => setStatusLista("realizado")}
                 />
-                <Apointments 
+                <Apointments
                     textButton={"Cancelados"}
                     clickButton={statusLista === "cancelado"}
                     onPress={() => setStatusLista("cancelado")}
@@ -46,14 +50,29 @@ export const Home = () => {
             </LineBtw>
 
             <CardList
-                data ={Consulta}
-                renderItem={(item) =><Card />}
-                keyExtractor={item => Consulta.id}
+                data={Consulta}
+                renderItem={(item) => <Card 
+                    modalVisible={() => setModalVisible(modalVisible)}
+                    situacao={item.situacao}
+                    nome={item.nome}
+                    />}
+                keyExtractor={item => item.id}
             />
-            
+
+            <Modal
+                animationType="slide"
+                transparent={true}
+                visible={modalVisible}
+                onRequestClose={() => {
+                    Alert.alert('Modal has been closed.');
+                    setModalVisible(!modalVisible);
+                }}>
+                <CancelarConsutlaModel modalVisible={() => setModalVisible(!modalVisible)}/>
+            </Modal>
 
 
-        </ContainerFB>
+
+        </ContainerFB >
     )
 
 }

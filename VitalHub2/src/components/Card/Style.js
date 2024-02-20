@@ -5,7 +5,7 @@ export const CardView = styled.View`
     width: 323px;
     padding: 5px;
     background-color: #FFFFFF;
-    margin-top: 12px;
+    margin: 12px 30px;
     justify-content: flex-start;
     flex-direction: row;
     align-items: center;

@@ -10,4 +10,5 @@ export const CardList = styled.FlatList`
     width: 100%;
     height: 50%;
     gap: 10px;
+    margin-top: 30px;
 `

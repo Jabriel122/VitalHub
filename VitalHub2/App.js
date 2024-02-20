@@ -19,6 +19,7 @@ import { InsercaoPontuarioEditable } from './src/screens/Medico/InsercaoPontuari
 import { Perfil01 } from './src/screens/Perfil/Perfil01/Perfil01';
 import { Perfil02 } from './src/screens/Perfil/Perfil02/Perfil02';
 import { Home } from './src/screens/Home/Home';
+import Teste from './src/components/Teste/TEste';
 
 //instÂncia do StackNavigator
 const Stack = createNativeStackNavigator();
@@ -51,7 +52,7 @@ export default function App() {
     //StackSrceen
 
     <NavigationContainer>
-      <Stack.Navigator>
+      <Stack.Navigator screenOptions={{headerShown: false}}>
         <Stack.Screen
           name='Navegação'
 
@@ -117,6 +118,12 @@ export default function App() {
           name='Home'
           component={Home}
           options={{ title: "Home" }}
+        />
+
+        <Stack.Screen
+          name='Teste'
+          component={Teste}
+          options={{ title: "Teste" }}
         />
        
       </Stack.Navigator>

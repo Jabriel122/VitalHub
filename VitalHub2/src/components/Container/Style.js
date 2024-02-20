@@ -46,5 +46,33 @@ export const ContainerHeader = styled(LinearGradient).attrs({
     
 `
 
+export const ContainerFooter = styled.View`
+    width:100%;
+    height: 61px;
+    border-radius: 15px 15px 0px 0px  ;
+    justify-content: space-between;
+    align-items: center;
+    align-self: center;
+    
+    margin-top: 20px;
+
+    box-shadow: 0px 0px 10px  black;
+    shadow-color: black;
+    shadow-offser: 0px 4px;
+    shadow-opacity: 0.15;
+    shadow-radius:15px;
+    elevation: 5;
+    
+`
+
+export const ModelContainer = styled.View`
+    border-radius: 10px;
+    width: 80%;
+    justify-content: center;
+    align-items: center;
+    
+
+`
+
 
 

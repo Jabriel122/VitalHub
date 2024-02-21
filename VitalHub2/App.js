@@ -21,6 +21,7 @@ import { Perfil02 } from './src/screens/Perfil/Perfil02/Perfil02';
 import { Home } from './src/screens/Home/Home';
 import Teste from './src/components/Teste/TEste';
 
+
 //instÂncia do StackNavigator
 const Stack = createNativeStackNavigator();
 

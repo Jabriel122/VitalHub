@@ -20,59 +20,87 @@ const Consulta = [
 
 export const Home = () => {
 
-    const [statusLista, setStatusLista] = useState();
+    const [statusLista, setStatusLista] = useState("pendente");
     const [modalVisible, setModalVisible] = useState(false);
 
 
     return (
-        <ContainerFB>
-            {/* Header */}
-            <Header />
+        <>
 
-            <CalendarHome />
+            <ContainerFB>
+                {/* Header */}
+                <Header />
 
-            <LineBtw>
-                <Apointments
-                    clickButton={statusLista === "pendente"}
-                    onPress={() => setStatusLista("pendente")}
-                    textButton={"Agendado"}
-                />
-                <Apointments
-                    textButton={"Realizado"}
-                    clickButton={statusLista === "realizado"}
-                    onPress={() => setStatusLista("realizado")}
-                />
-                <Apointments
-                    textButton={"Cancelados"}
-                    clickButton={statusLista === "cancelado"}
-                    onPress={() => setStatusLista("cancelado")}
-                />
-            </LineBtw>
+                <CalendarHome />
 
-            <CardList
-                data={Consulta}
-                renderItem={(item) => <Card 
-                    modalVisible={() => setModalVisible(modalVisible)}
-                    situacao={item.situacao}
-                    nome={item.nome}
-                    />}
-                keyExtractor={item => item.id}
-            />
+                <LineBtw>
+                    <Apointments
+                        clickButton={statusLista === "pendente"}
+                        onPress={() => setStatusLista("pendente")}
+                        textButton={"Agendado"}
+                    />
+                    <Apointments
+                        textButton={"Realizado"}
+                        clickButton={statusLista === "realizado"}
+                        onPress={() => setStatusLista("realizado")}
+                    />
+                    <Apointments
+                        textButton={"Cancelados"}
+                        clickButton={statusLista === "cancelado"}
+                        onPress={() => setStatusLista("cancelado")}
+                    />
+                </LineBtw>
 
-            <Modal
-                animationType="slide"
-                transparent={true}
+                {
+                    statusLista == "pendente" ? (
+                        <CardList
+                            data={Consulta}
+                            keyExtractor={item => item.id}
+
+                            renderItem={({ item }) => item.situacao == "pendente" ? <Card
+                                // modalVisible={() => setModalVisible(modalVisible)}
+                                situacao={item.situacao}
+                                nome={item.nome}
+                                statusLista={statusLista}
+                                onPressCancel={() => setModalVisible(true)}
+                            /> : <></>}
+
+                        />
+                    ) : statusLista == "realizado" ? (
+                        <CardList
+                            data={Consulta}
+                            keyExtractor={item => item.id}
+
+                            renderItem={({ item }) => item.situacao == "realizado" ? <Card
+                                // modalVisible={() => setModalVisible(modalVisible)}
+                                situacao={item.situacao}
+                                nome={item.nome}
+                                statusLista={statusLista}
+                            /> : <></>}
+
+                        />
+                    ) : (
+                        <CardList
+                            data={Consulta}
+                            keyExtractor={item => item.id}
+                            renderItem={({ item }) => item.situacao == "cancelado" ? <Card
+                                // modalVisible={() => setModalVisible(modalVisible)}
+                                situacao={item.situacao}
+                                nome={item.nome}
+                                statusLista={statusLista}
+                                
+                            /> : <></>}
+
+                        />
+                    )
+                }
+
+            </ContainerFB >
+            <CancelarConsutlaModel
                 visible={modalVisible}
-                onRequestClose={() => {
-                    Alert.alert('Modal has been closed.');
-                    setModalVisible(!modalVisible);
-                }}>
-                <CancelarConsutlaModel modalVisible={() => setModalVisible(!modalVisible)}/>
-            </Modal>
-
-
-
-        </ContainerFB >
+                onRequestClose={() =>{setModalVisible(false)}}
+            />
+        </>
     )
 
 }

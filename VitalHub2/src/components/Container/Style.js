@@ -66,8 +66,7 @@ export const ContainerFooter = styled.View`
 `
 
 export const ModelContainer = styled.View`
-    border-radius: 10px;
-    width: 80%;
+    width: 100%;
     justify-content: center;
     align-items: center;
     

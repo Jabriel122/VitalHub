@@ -6,16 +6,18 @@ import { TouchableOpacity } from "react-native";
 export const Card = ({
     color,
     modalVisible,
-    situacao = "pendente",
+    situacao,
+    statusLista,
     onPressCancel,
-    onPressAppointment
+    onPressAppointment,
+    nome
 
 }) => {
     return (
         <CardView>
             <CardImage source={{ uri: "https://github.com/Jabriel122.png" }} />
             <CardData>
-                <CardTitle>Gabriel MArchas</CardTitle>
+                <CardTitle>{nome}</CardTitle>
                 <CardDataSub>
                     <CardIdade>20 anos</CardIdade>
                     <Entypo name="dot-single" size={24} color="grey" />

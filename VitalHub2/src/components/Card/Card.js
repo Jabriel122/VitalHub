@@ -10,7 +10,8 @@ export const Card = ({
     statusLista,
     onPressCancel,
     onPressAppointment,
-    nome
+    nome,
+
 
 }) => {
     return (

@@ -61,4 +61,5 @@ export const BoxShadow = styled.View`
 export const BoxUser = styled.View`
     flex-direction: row;
     align-items: center;
+    
 `

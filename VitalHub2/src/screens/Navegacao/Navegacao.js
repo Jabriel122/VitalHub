@@ -38,14 +38,7 @@ export const Navegacao = ({ navigation }) => {
                     title=" InsercaoPontuarioEditable"
                     onPress={() => navigation.navigate("InsercaoPontuarioEditable")}
                 />
-                <Button
-                    title=" Perfil01"
-                    onPress={() => navigation.navigate("Perfil01")}
-                />
-                <Button
-                    title=" Perfil02"
-                    onPress={() => navigation.navigate("Perfil02")}
-                />
+
 
                 <Title>Home</Title>
                 <Button
@@ -53,6 +46,20 @@ export const Navegacao = ({ navigation }) => {
                     onPress={() => navigation.navigate("Home")}
                 />
 
+                <Title>PACIENTE</Title>
+                <Button
+                    title=" ConsultasPaciente"
+                    onPress={() => navigation.navigate("ConsultasPaciente")}
+                />
+                                <Button
+                    title=" Perfil01"
+                    onPress={() => navigation.navigate("Perfil01")}
+                />
+                <Button
+                    title=" Perfil02"
+                    onPress={() => navigation.navigate("Perfil02")}
+                />
+            
                 <Title>TESTE</Title>
                 <Button
                     title=" Teste"

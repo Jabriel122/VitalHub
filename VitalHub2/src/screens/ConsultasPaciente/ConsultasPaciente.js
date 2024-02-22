@@ -4,29 +4,26 @@ import { CalendarHome } from "../../components/CalandarHome/CalendarHome"
 import { Card } from "../../components/Card/Card"
 import { Container, ContainerFB } from "../../components/Container/Style"
 import { Header } from "../../components/Header/Header"
-import { ButtonGoogleTitle, ButtonTitle, TitleLitteButton } from "../../components/Title/Style"
-import { CardList, LineBtw } from "./Style"
 import { Apointments } from "../../components/Apointments/Apointments"
 import { CancelarConsutlaModel } from "../Model/CancelarConsultaModel/CancelarConsultaModel"
 import { Modal } from "react-native"
 import { ProntuaryModal } from "../Model/Prontuary/ProntuaryModal"
+import { CardList, LineBtw } from "../Home/Style"
+import { MaterialCommunityIcons } from '@expo/vector-icons';
+import { NewConsul } from "./Style"
 
 const Consulta = [
-    { id: 1, nome: "GABS", situacao: "pendente", email:"gbielmarch@gmail.com", idade: "19 anos",username:"dixx_marchasss" },
-    { id: 2, nome: "Luis", situacao: "realizado", email:"Luis@gmail.com", idade: "32 anos",username: "https://github.com/Jabriel122 .png" },
-    { id: 3, nome: "Nayas", situacao: "pendente", email:"Nayascat@gmail.com", idade: "22 anos",username:"sr_batatotato" },
-    { id: 4, nome: "Lucass", situacao: "realizado", email:"saCul@gmail.com", idade: "9 anos",username: "lusk4_xnr"},
-    { id: 5, nome: "Diogo", situacao: "cancelado", email:"Diggas@gmail.com", idade: "29 anos",username: "dixx__luquinhasz" },
+    { id: 1, nome: "Dr.GALADRIEL", situacao: "pendente", email: "gbielmarch@gmail.com", idade: "19 anos", username: "dixx_marchasss" },
+    { id: 2, nome: "Dr.LEONARDO", situacao: "realizado", email: "Luis@gmail.com", idade: "32 anos", username: "https://github.com/Jabriel122 .png" },
+    { id: 3, nome: "Dr.Mathias", situacao: "pendente", email: "Nayascat@gmail.com", idade: "22 anos", username: "sr_batatotato" },
+    { id: 4, nome: "Dr.Fabiano", situacao: "realizado", email: "saCul@gmail.com", idade: "9 anos", username: "lusk4_xnr" },
+    { id: 5, nome: "Dra.Patricia", situacao: "cancelado", email: "Diggas@gmail.com", idade: "29 anos", username: "dixx__luquinhasz" },
 ]
-
-export const Home = () => {
-
+export const ConsultasPaciente = () => {
     const [statusLista, setStatusLista] = useState("pendente");
     const [modalVisible, setModalVisible] = useState(false);
     const [modalPromptuary, setModalPromptuary] = useState(false);
     const [itemSelecionado, setItemSelecionado] = useState(null);
-
-
     return (
         <>
 
@@ -96,27 +93,30 @@ export const Home = () => {
                                 situacao={item.situacao}
                                 nome={item.nome}
                                 statusLista={statusLista}
-                                
+
                             /> : <></>}
 
                         />
                     )
                 }
 
+                <NewConsul>
+                    <MaterialCommunityIcons name="stethoscope" size={32} color="#FBFBFB" />
+                </NewConsul>
+
             </ContainerFB >
             <CancelarConsutlaModel
                 visible={modalVisible}
-                onRequestClose={() =>{setModalVisible(false)}}
+                onRequestClose={() => { setModalVisible(false) }}
             />
             <ProntuaryModal
                 visible={modalPromptuary}
-                onRequestClose={() =>{setModalPromptuary(false)}}
+                onRequestClose={() => { setModalPromptuary(false) }}
                 nome={itemSelecionado?.nome}
                 email={itemSelecionado?.email}
                 idade={itemSelecionado?.idade}
-                // username={itemSelecionado?.username}
+            // username={itemSelecionado?.username}
             />
         </>
     )
-
 }

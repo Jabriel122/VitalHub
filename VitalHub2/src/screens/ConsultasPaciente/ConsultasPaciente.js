@@ -11,6 +11,7 @@ import { ProntuaryModal } from "../Model/Prontuary/ProntuaryModal"
 import { CardList, LineBtw } from "../Home/Style"
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { NewConsul } from "./Style"
+import { ScheduleModel } from "../Model/ScheduleModel/ScheduleModel"
 
 const Consulta = [
     { id: 1, nome: "Dr.GALADRIEL", situacao: "pendente", email: "gbielmarch@gmail.com", idade: "19 anos", username: "dixx_marchasss" },
@@ -23,6 +24,7 @@ export const ConsultasPaciente = () => {
     const [statusLista, setStatusLista] = useState("pendente");
     const [modalVisible, setModalVisible] = useState(false);
     const [modalPromptuary, setModalPromptuary] = useState(false);
+    const [agendarConsultaModla, setAgendarConsultaModla] = useState(false);
     const [itemSelecionado, setItemSelecionado] = useState(null);
     return (
         <>
@@ -100,11 +102,18 @@ export const ConsultasPaciente = () => {
                     )
                 }
 
-                <NewConsul>
+                <NewConsul
+                    onPress={() => setAgendarConsultaModla(true)}
+                >
                     <MaterialCommunityIcons name="stethoscope" size={32} color="#FBFBFB" />
                 </NewConsul>
 
             </ContainerFB >
+            <ScheduleModel
+                visible={agendarConsultaModla}
+                onRequestClose={() => { setAgendarConsultaModla(false) }}
+            />
+
             <CancelarConsutlaModel
                 visible={modalVisible}
                 onRequestClose={() => { setModalVisible(false) }}

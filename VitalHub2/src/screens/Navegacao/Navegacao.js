@@ -51,7 +51,11 @@ export const Navegacao = ({ navigation }) => {
                     title=" ConsultasPaciente"
                     onPress={() => navigation.navigate("ConsultasPaciente")}
                 />
-                                <Button
+                <Button
+                     title=" SelecionarClinica"
+                     onPress={() => navigation.navigate("SelecionarClinica")}
+                />
+                <Button
                     title=" Perfil01"
                     onPress={() => navigation.navigate("Perfil01")}
                 />
@@ -59,7 +63,7 @@ export const Navegacao = ({ navigation }) => {
                     title=" Perfil02"
                     onPress={() => navigation.navigate("Perfil02")}
                 />
-            
+
                 <Title>TESTE</Title>
                 <Button
                     title=" Teste"

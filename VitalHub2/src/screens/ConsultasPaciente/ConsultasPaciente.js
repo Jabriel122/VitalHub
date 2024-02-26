@@ -6,7 +6,7 @@ import { Container, ContainerFB } from "../../components/Container/Style"
 import { Header } from "../../components/Header/Header"
 import { Apointments } from "../../components/Apointments/Apointments"
 import { CancelarConsutlaModel } from "../Model/CancelarConsultaModel/CancelarConsultaModel"
-import { Modal } from "react-native"
+import { Modal, TouchableOpacity } from "react-native"
 import { ProntuaryModal } from "../Model/Prontuary/ProntuaryModal"
 import { CardList, LineBtw } from "../Home/Style"
 import { MaterialCommunityIcons } from '@expo/vector-icons';
@@ -28,7 +28,6 @@ export const ConsultasPaciente = () => {
     const [itemSelecionado, setItemSelecionado] = useState(null);
     return (
         <>
-
             <ContainerFB>
                 {/* Header */}
                 <Header />

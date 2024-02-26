@@ -21,6 +21,7 @@ import { Perfil02 } from './src/screens/Perfil/Perfil02/Perfil02';
 import { Home } from './src/screens/Home/Home';
 import Teste from './src/components/Teste/TEste';
 import { ConsultasPaciente } from './src/screens/ConsultasPaciente/ConsultasPaciente';
+import { SelecionarClinica } from './src/screens/ConsultasPaciente-SelecionarClinica/SelecionarClinica';
 
 
 //instÂncia do StackNavigator
@@ -119,6 +120,11 @@ export default function App() {
           name='ConsultasPaciente'
           component={ConsultasPaciente}
           options={{ title: "ConsultasPaciente" }}
+        />
+        <Stack.Screen
+          name='SelecionarClinica'
+          component={SelecionarClinica}
+          options={{ title: "SelecionarClinica" }}
         />
     
        

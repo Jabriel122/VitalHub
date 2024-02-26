@@ -6,7 +6,7 @@ export const ChoiceButtons = styled.TouchableOpacity`
    
     
     background-color: ${props => props.clickButton ? "#60BFC5" : "transparent"};
-    border: 2px solid #496BBA;
+    border: 2px solid #60BFC5;
     
     /* background-color: ${props => `#${props.bkcolor}`}; */
     border-radius: 5px;

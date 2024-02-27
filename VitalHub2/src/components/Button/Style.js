@@ -25,6 +25,17 @@ export const ButtonGoogle = styled(Button)`
 
     justify-content: space-evenly;
 `
+export const ButtonAjust = styled.TouchableOpacity`
+    width: ${props => `${props.fieldwidth}%`};
+    height: ${props => `${props.fieldheigth}px`};
+    background-color: ${props => `#${props.color}`};
+    margin-top: ${props => `${props.mrginTop}px`};
+    border-radius: 5px;
+    border: ${props => `#${props.borderColor}`};
 
+    justify-content: center;
+    align-items: center;
+
+`
 
 

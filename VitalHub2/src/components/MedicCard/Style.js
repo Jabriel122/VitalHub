@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const ClinicCardView = styled.TouchableOpacity`
+export const MedicCardView = styled.TouchableOpacity`
     border: ${props => props.color ? "2px solid #496BBA" : "0px"};
     height: 84px;
     width: 323px;
@@ -20,7 +20,7 @@ export const ClinicCardView = styled.TouchableOpacity`
     elevation: 5;
 `
 
-export const ClinicCardData = styled.View`
+export const MedicCardData = styled.View`
     /* flex-direction: column; */
     width: 90%;
     justify-content: space-between;
@@ -28,16 +28,16 @@ export const ClinicCardData = styled.View`
     /* border: 1PX solid green; */
 `
 
-export const ClinicCardTitle = styled.Text`
+export const MedicCardTitle = styled.Text`
       font-family: "MontserratAlternates_600SemiBold";
     font-size: 16px;
 `
 
-export const ClinicCardDataSub = styled.View`
+export const MedicCardDataSub = styled.View`
     flex-direction: row;
 `
 
-export const ClinicCardBottomData = styled.View`
+export const MedicCardBottomData = styled.View`
        justify-content: space-between;
     flex-direction: row;
     width: auto;
@@ -45,31 +45,19 @@ export const ClinicCardBottomData = styled.View`
     /* border: 1px solid yellow; */
 `
 
-export const ClinicCardGreen = styled.View`
-      /* border: 1px solid red; */
-      justify-content: space-between;
-    flex-direction: row;
-    background-color: #E8FCFD;
-
-`
-
-export const ClinicCardStarBox = styled.View`
+export const MedicCardStarBox = styled.View`
     /* border: 1px solid red; */
     flex-direction: row;
     
 `
 
-export const StarText = styled.Text`
-    color: #F9A620;
-`
-
-export const ClinicCardText = styled.Text`
+export const MedicCardText = styled.Text`
         font-family: "Quicksand_600SemiBold";
     font-size: 14px;
     color: ${props => `#${props.color}`};
 `
 
-export const ClinicCardBoxTop = styled.View`
+export const MedicCardBoxTop = styled.View`
     flex-direction: row;
     justify-content: space-between;
     margin-bottom: 12px;

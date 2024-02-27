@@ -11,6 +11,15 @@ export const Title = styled.Text`
     
 `
 
+export const AjustTitle = styled.Text`
+    font-size: ${props => `${props.fontSize}px`};
+    color: ${props => `#${props.color}`};
+    margin-bottom:  ${props => `${props.marginBottom}px`};
+    margin-top:  ${props => `${props.marginTop}px`};
+    font-family: 'MontserratAlternates_600SemiBold';
+    align-self: center;
+`
+
 export const ButtonTitle = styled.Text`
     font-size: 15px;
     font-family: "MontserratAlternates_700Bold";

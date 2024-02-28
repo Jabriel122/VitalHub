@@ -1,25 +1,29 @@
-import { MedicCardBottomData, MedicCardBoxTop, MedicCardData, MedicCardDataSub, MedicCardText, MedicCardTitle, MedicCardView } from "./Style"
+import { MedicCardBottomData, MedicCardBoxTop, MedicCardData, MedicCardDataSub, MedicCardText, MedicCardTitle, MedicCardView, MedicImage } from "./Style"
 
-export const MedicCard = () => {
+export const MedicCard = ({
     MedicName,
     ocupacao,
     onPress,
     color
+}) => {
+
 
     return (
         <MedicCardView
             color={color}
             onPress={onPress}
         >
+
+            <MedicImage source={require("../../assets/PofilePicture/Cillian Murphy.png")}/>
             <MedicCardData>
                 <MedicCardBoxTop >
-                    <MedicCardTitle>{MedicName}</MedicCardTitle> 
+                    <MedicCardTitle>{MedicName}</MedicCardTitle>
                 </MedicCardBoxTop>
 
                 <MedicCardBottomData>
                     {/* Icone */}
                     <MedicCardDataSub>
-                        <MedicCardText> {ocupacao}</MedicCardText>
+                        <MedicCardText color={"8C8A97"}> {ocupacao}</MedicCardText>
                     </MedicCardDataSub>
                 </MedicCardBottomData>
             </MedicCardData>

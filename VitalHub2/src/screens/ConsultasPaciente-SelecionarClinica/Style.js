@@ -9,6 +9,9 @@ export const ClinicCardList = styled.FlatList`
 `
 
 export const AjustCardList = styled.View`
-    width: auto;
-    height: 75%;
+    width:100%;
+    justify-content: center;
+    
+    flex: 0.95;
+    //height: 75%;
 `

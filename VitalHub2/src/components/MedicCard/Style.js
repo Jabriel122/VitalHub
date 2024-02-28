@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const MedicCardView = styled.TouchableOpacity`
     border: ${props => props.color ? "2px solid #496BBA" : "0px"};
-    height: 84px;
+    height: 102px;
     width: 323px;
     padding: 5px;
     background-color: #FFFFFF;
@@ -62,4 +62,10 @@ export const MedicCardBoxTop = styled.View`
     justify-content: space-between;
     margin-bottom: 12px;
     /* border: 1px solid blue; */
+`
+export const MedicImage = styled.Image`
+    height: 80px;
+    width: 77px;
+    margin-left: 5px;
+    border-radius: 5px;
 `

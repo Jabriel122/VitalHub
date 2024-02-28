@@ -14,6 +14,7 @@
     "@expo-google-fonts/quicksand": "^0.2.3",
     "@react-navigation/native": "^6.1.9",
     "@react-navigation/native-stack": "^6.9.17",
+    "date-fns": "^3.3.1",
     "expo": "~50.0.5",
     "expo-font": "~11.10.2",
     "expo-linear-gradient": "~12.7.1",
@@ -21,7 +22,9 @@
     "react": "18.2.0",
     "react-native": "0.73.2",
     "react-native-axios": "^0.17.1",
+    "react-native-calendar-picker": "^8.0.1",
     "react-native-calendar-strip": "^2.2.6",
+    "react-native-calendars": "^1.1304.0",
     "react-native-modal": "^13.0.1",
     "styled-components": "^6.1.8"
   },

@@ -6,6 +6,7 @@ import { LinkOppacityMarginTop, TextAccountLink } from "../../components/Links/S
 import { AjustTitle, ButtonQuitTitle, Title } from "../../components/Title/Style"
 import { AjustCardList, ClinicCardList } from "./Style"
 import { MedicCard } from "../../components/MedicCard/MedicCard"
+import { CalendarApp } from "../../components/CalendarApp/CalendarApp"
 
 const Clinica = [
     { id: 1, nome: "Clínica Natureh", nota: "4,5", estado: "São Paulo, SP", calendario: "Seg-Sex" },
@@ -15,10 +16,10 @@ const Clinica = [
     { id: 5, nome: "Clinica Ilko", nota: "4,8", estado: "São Paulo, SP", calendario: "Seg-Sab" },
 ]
 const Medico = [
-    { id: 1, nome: "Dr.GALADRIEL",ocupacao: "Demartologa, Esteticista"},
-    { id: 2, nome: "Dr.LEONARDO", ocupacao: "Cirurgião, Neurologista "},
-    { id: 3, nome: "Dr.Mathias", ocupacao: "Clinioco, ortopedista"},
-    { id: 4, nome: "Dr.Fabiano", ocupacao: "Clinico Geral"  },
+    { id: 1, nome: "Dr.GALADRIEL", ocupacao: "Demartologa, Esteticista" },
+    { id: 2, nome: "Dr.LEONARDO", ocupacao: "Cirurgião, Neurologista " },
+    { id: 3, nome: "Dr.Mathias", ocupacao: "Clinioco, ortopedista" },
+    { id: 4, nome: "Dr.Fabiano", ocupacao: "Clinico Geral" },
     { id: 5, nome: "Dra.Patricia", ocupacao: "Clínico, Pediatra" },
 ]
 
@@ -64,23 +65,26 @@ export const SelecionarClinica = () => {
 
                 ) : status == "médico" ? (
                     <AjustCardList>
-                    <ClinicCardList
-                        data={Medico}
-                        keyExtractor={item => item.id}
+                        <ClinicCardList
+                            data={Medico}
+                            keyExtractor={item => item.id}
 
-                        renderItem={({ item }) => <MedicCard
-                            // modalVisible={() => setModalVisible(modalVisible)}
-                            MedicName={item.nome}
-                            ocupacao={item.ocupacao}
-                            color={medicSelect == item.id}
-                            onPress={() => medicSelect == item.id ? setMedicSelect(item.id) : setMedicSelect(item.id)}
-                        />}
-                    />
-                </AjustCardList>
+                            renderItem={({ item }) => <MedicCard
+                                // modalVisible={() => setModalVisible(modalVisible)}
+                                MedicName={item.nome}
+                                ocupacao={item.ocupacao}
+                                color={medicSelect == item.id}
+                                onPress={() => medicSelect == item.id ? setMedicSelect(item.id) : setMedicSelect(item.id)}
+                            />}
+                        />
+                    </AjustCardList>
                 ) : (
-                    <></>
+                    <AjustCardList>
+                        <CalendarApp />
+                    </AjustCardList>
+
                 )
-                
+
             }
 
 

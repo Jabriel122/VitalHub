@@ -9,9 +9,27 @@ export const ClinicCardList = styled.FlatList`
 `
 
 export const AjustCardList = styled.View`
-    width:100%;
-    justify-content: center;
+    width:${props => `${props.fieldWidth}%`};
+    /* justify-content: center; */
     
     flex: 0.95;
     //height: 75%;
+`
+
+export const BoxNivel = styled.View`
+    margin-top: 15px;
+    justify-content: center;
+    width: 100%;
+`
+
+export const NivelTitle = styled.Text`
+    font-family: "Quicksand_600SemiBold";
+    margin-left: 10px;
+` 
+
+export const AddData = styled.View`
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    align-self: center;
 `

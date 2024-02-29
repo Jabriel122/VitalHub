@@ -4,9 +4,11 @@ import { ClinicCard } from "../../components/ClinicCard/ClinicCard"
 import { Container } from "../../components/Container/Style"
 import { LinkOppacityMarginTop, TextAccountLink } from "../../components/Links/Style"
 import { AjustTitle, ButtonQuitTitle, Title } from "../../components/Title/Style"
-import { AjustCardList, ClinicCardList } from "./Style"
+import { AddData, AjustCardList, BoxNivel, ClinicCardList, NivelTitle } from "./Style"
 import { MedicCard } from "../../components/MedicCard/MedicCard"
 import { CalendarApp } from "../../components/CalendarApp/CalendarApp"
+import { Input } from "../../components/Input/Style"
+import { StyleSheet } from "react-native"
 
 const Clinica = [
     { id: 1, nome: "Clínica Natureh", nota: "4,5", estado: "São Paulo, SP", calendario: "Seg-Sex" },
@@ -46,7 +48,9 @@ export const SelecionarClinica = () => {
             </AjustTitle>
             {
                 status == "clínica" ? (
-                    <AjustCardList>
+                    <AjustCardList
+                        fieldWidth={100}
+                    >
                         <ClinicCardList
                             data={Clinica}
                             keyExtractor={item => item.id}
@@ -64,7 +68,9 @@ export const SelecionarClinica = () => {
                     </AjustCardList>
 
                 ) : status == "médico" ? (
-                    <AjustCardList>
+                    <AjustCardList
+                        fieldWidth={100}
+                    >
                         <ClinicCardList
                             data={Medico}
                             keyExtractor={item => item.id}
@@ -79,8 +85,19 @@ export const SelecionarClinica = () => {
                         />
                     </AjustCardList>
                 ) : (
-                    <AjustCardList>
+                    <AjustCardList
+                        fieldWidth={90}
+                    >
                         <CalendarApp />
+
+                        <BoxNivel>
+                            <NivelTitle>
+                                Informe a localização desejada
+                            </NivelTitle>
+                            <AddData>
+                              <Input placeholder="LAKSNAKLDNSNAl"/>
+                            </AddData>
+                        </BoxNivel>
                     </AjustCardList>
 
                 )

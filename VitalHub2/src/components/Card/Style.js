@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const CardView = styled.View`
+export const CardView = styled.TouchableOpacity`
     height: 103px;
     width: 323px;
     padding: 5px;

@@ -3,13 +3,13 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 import { Navegacao } from './src/screens/Navegacao/Navegacao';
-import {Login} from './src/screens/Login/Login'
+import { Login } from './src/screens/Login/Login'
 import { RecuperarSenha } from './src/screens/RecuperarSenha/RecuperarSenha';
 
 // Importar Fonts
 
 import { useFonts, MontserratAlternates_600SemiBold, MontserratAlternates_500Medium, MontserratAlternates_700Bold } from '@expo-google-fonts/montserrat-alternates';
-import { Quicksand_500Medium,Quicksand_600SemiBold,Quicksand_400Regular } from '@expo-google-fonts/quicksand';
+import { Quicksand_500Medium, Quicksand_600SemiBold, Quicksand_400Regular } from '@expo-google-fonts/quicksand';
 import { VerificarEmail } from './src/screens/VerificarEmail/VerificarEmail';
 import { RedefinirSenha } from './src/screens/RedefinirSenha/RedefinirSenha';
 import { CriarConta } from './src/screens/CriarConta/CriarConta';
@@ -22,6 +22,7 @@ import { Home } from './src/screens/Home/Home';
 import Teste from './src/components/Teste/TEste';
 import { ConsultasPaciente } from './src/screens/ConsultasPaciente/ConsultasPaciente';
 import { SelecionarClinica } from './src/screens/ConsultasPaciente-SelecionarClinica/SelecionarClinica';
+import { ConsultaVizualizarP } from './src/screens/ConsultaVizulaizarP/ConsultaVizulaizarP';
 
 
 //instÂncia do StackNavigator
@@ -30,7 +31,7 @@ const Stack = createNativeStackNavigator();
 export default function App() {
 
   const [fontsLoaded, fontsError] = useFonts({
-    MontserratAlternates_600SemiBold, MontserratAlternates_500Medium, MontserratAlternates_700Bold, Quicksand_500Medium, Quicksand_400Regular ,Quicksand_600SemiBold, 
+    MontserratAlternates_600SemiBold, MontserratAlternates_500Medium, MontserratAlternates_700Bold, Quicksand_500Medium, Quicksand_400Regular, Quicksand_600SemiBold,
   });
 
   if (!fontsLoaded && !fontsError) {
@@ -55,7 +56,7 @@ export default function App() {
     //StackSrceen
 
     <NavigationContainer>
-      <Stack.Navigator screenOptions={{headerShown: false}}>
+      <Stack.Navigator screenOptions={{ headerShown: false }}>
         <Stack.Screen
           name='Navegação'
 
@@ -126,8 +127,12 @@ export default function App() {
           component={SelecionarClinica}
           options={{ title: "SelecionarClinica" }}
         />
-    
-       
+
+        <Stack.Screen
+          name='ConsultaVizualizarP'
+          component={ConsultaVizualizarP}
+          options={{ title: "ConsultaVizualizarP" }}
+        />s
 
         <Stack.Screen
           name='Home'
@@ -140,7 +145,7 @@ export default function App() {
           component={Teste}
           options={{ title: "Teste" }}
         />
-       
+
       </Stack.Navigator>
     </NavigationContainer>
   );

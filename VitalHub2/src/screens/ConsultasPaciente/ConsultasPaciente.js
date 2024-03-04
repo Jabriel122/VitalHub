@@ -6,19 +6,20 @@ import { Container, ContainerFB } from "../../components/Container/Style"
 import { Header } from "../../components/Header/Header"
 import { Apointments } from "../../components/Apointments/Apointments"
 import { CancelarConsutlaModel } from "../Model/CancelarConsultaModel/CancelarConsultaModel"
-import { Modal, TouchableOpacity } from "react-native"
+import { Modal, TouchableHighlightBase, TouchableOpacity } from "react-native"
 import { ProntuaryModal } from "../Model/Prontuary/ProntuaryModal"
 import { CardList, LineBtw } from "../Home/Style"
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { NewConsul } from "./Style"
 import { ScheduleModel } from "../Model/ScheduleModel/ScheduleModel"
+import { DoctorModal } from "../Model/DoctorModal/DoctorModal"
 
 const Consulta = [
-    { id: 1, nome: "Dr.GALADRIEL", situacao: "pendente", email: "gbielmarch@gmail.com", idade: "19 anos", username: "dixx_marchasss" },
-    { id: 2, nome: "Dr.LEONARDO", situacao: "realizado", email: "Luis@gmail.com", idade: "32 anos", username: "https://github.com/Jabriel122 .png" },
-    { id: 3, nome: "Dr.Mathias", situacao: "pendente", email: "Nayascat@gmail.com", idade: "22 anos", username: "sr_batatotato" },
-    { id: 4, nome: "Dr.Fabiano", situacao: "realizado", email: "saCul@gmail.com", idade: "9 anos", username: "lusk4_xnr" },
-    { id: 5, nome: "Dra.Patricia", situacao: "cancelado", email: "Diggas@gmail.com", idade: "29 anos", username: "dixx__luquinhasz" },
+    { id: 1, nome: "Dr.GALADRIEL", situacao: "pendente", email: "gbielmarch@gmail.com", idade: "19 anos", ocupacao: "Clinico Geral", codigo:"CRM-15286" },
+    { id: 2, nome: "Dr.LEONARDO", situacao: "realizado", email: "Luis@gmail.com", idade: "32 anos", ocupacao: "Psicologo", codigo:"CRM-12983"},
+    { id: 3, nome: "Dr.Mathias", situacao: "pendente", email: "Nayascat@gmail.com", idade: "22 anos", ocupacao: "Cirurgião", codigo:"CRM-12092"},
+    { id: 4, nome: "Dr.Fabiano", situacao: "realizado", email: "saCul@gmail.com", idade: "9 anos", ocupacao: "NeuroCirugião", codigo:"CRM-09990"},
+    { id: 5, nome: "Dra.Patricia", situacao: "cancelado", email: "Diggas@gmail.com", idade: "29 anos", ocupacao: "Quiroprta" , codigo:"CRM-78912"},
 ]
 export const ConsultasPaciente = () => {
     const [statusLista, setStatusLista] = useState("pendente");
@@ -26,6 +27,7 @@ export const ConsultasPaciente = () => {
     const [modalPromptuary, setModalPromptuary] = useState(false);
     const [agendarConsultaModla, setAgendarConsultaModla] = useState(false);
     const [itemSelecionado, setItemSelecionado] = useState(null);
+    const [doctorModal, setDoctorModal] = useState(false);
     return (
         <>
             <ContainerFB>
@@ -64,6 +66,10 @@ export const ConsultasPaciente = () => {
                                 nome={item.nome}
                                 statusLista={statusLista}
                                 onPressCancel={() => setModalVisible(true)}
+                                onPressDoctor={() => {
+                                    setDoctorModal(true);
+                                    setItemSelecionado(item);
+                                }}
                             /> : <></>}
 
                         />
@@ -117,6 +123,7 @@ export const ConsultasPaciente = () => {
                 visible={modalVisible}
                 onRequestClose={() => { setModalVisible(false) }}
             />
+
             <ProntuaryModal
                 visible={modalPromptuary}
                 onRequestClose={() => { setModalPromptuary(false) }}
@@ -124,6 +131,14 @@ export const ConsultasPaciente = () => {
                 email={itemSelecionado?.email}
                 idade={itemSelecionado?.idade}
             // username={itemSelecionado?.username}
+            />
+
+            <DoctorModal
+                visible={doctorModal}
+                onRequestClose={() => { setDoctorModal(false)}}
+                nome={itemSelecionado?.nome}
+                codigo={itemSelecionado?.codigo}
+                ocupacao={itemSelecionado?.ocupacao}
             />
         </>
     )

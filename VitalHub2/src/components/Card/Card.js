@@ -1,7 +1,7 @@
 import { CardData, CardDataSub, CardIdade, CardImage, CardEmergencia, CardTitle, CardView, CardText, CardGreen, CardDefinition, CardBottomData } from "./Style"
 import { Entypo } from '@expo/vector-icons';
 import { AntDesign } from '@expo/vector-icons';
-import { TouchableOpacity } from "react-native";
+import { TouchableHighlight, TouchableOpacity } from "react-native";
 
 export const Card = ({
     color,
@@ -11,11 +11,14 @@ export const Card = ({
     onPressCancel,
     onPressAppointment,
     nome,
+    onPressDoctor
 
 
 }) => {
     return (
-        <CardView>
+        <CardView
+            onPress={onPressDoctor}
+        >
             <CardImage source={{ uri: "https://github.com/Jabriel122.png" }} />
             <CardData>
                 <CardTitle>{nome}</CardTitle>

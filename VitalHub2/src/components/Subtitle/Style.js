@@ -9,3 +9,7 @@ export const Subtitle = styled.Text`
     font-size: 16px;
     margin-top: 10px;
 `
+
+export const SubtitleDoctor = styled(Subtitle)`
+    font-size: 14px;
+`

@@ -33,6 +33,8 @@ export const BoxRow = styled.View`
 
 `
 
+
+
 export const BoxTitleLabel = styled.View`
     justify-content: flex-start;
     width: 90%;

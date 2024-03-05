@@ -9,6 +9,12 @@ export const Label = styled.View`
     margin-top: 10px;
 `
 
+export const LabelImage = styled(Label)`
+    justify-content: center;
+    align-items: center;
+    height: 111px;
+`
+
 
 
 export const TextLabel = styled.Text`

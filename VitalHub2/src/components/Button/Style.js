@@ -38,4 +38,11 @@ export const ButtonAjust = styled.TouchableOpacity`
 
 `
 
+export const ButtonAjustImage = styled(ButtonAjust)`
+    flex-direction: row;
+    /*       */
+    width: ${props => `${props.fieldwidth}px`};
+    padding: 10px;
+`
+
 

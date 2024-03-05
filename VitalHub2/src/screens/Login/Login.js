@@ -8,8 +8,15 @@ import { ButtonGoogle, Button } from "../../components/Button/Style"
 import { Fontisto } from '@expo/vector-icons';
 import { ContentAccount, TextAccount } from "./Style"
 import { BoxInput, BoxMarginDown } from "../../components/Box/Style"
+import { useState } from "react"
 
 export const Login = ({ navigation, fieldwidth }) => {
+    const [email, setEmail] = useState("")
+    const [senha, setSenha] = useState("")
+
+    async function Login(){
+        navigation.navigate("Main")
+    }
     return (
         <Container>
 
@@ -34,7 +41,7 @@ export const Login = ({ navigation, fieldwidth }) => {
 
             {/* <TouchableOpacity></TouchableOpacity> */}
 
-            <Button>
+            <Button onPress={() => Login()}>
                 <ButtonTitle>Entrar</ButtonTitle>
             </Button>
             <ButtonGoogle>

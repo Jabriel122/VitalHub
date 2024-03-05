@@ -19,6 +19,9 @@ export const AjustTitle = styled.Text`
     font-family: 'MontserratAlternates_600SemiBold';
     align-self: center;
 `
+export const ButtonAjustTitleImage = styled(AjustTitle)`
+    margin-left: 20px;
+`
 
 export const ButtonTitle = styled.Text`
     font-size: 15px;

@@ -23,6 +23,8 @@ import Teste from './src/components/Teste/TEste';
 import { ConsultasPaciente } from './src/screens/ConsultasPaciente/ConsultasPaciente';
 import { SelecionarClinica } from './src/screens/ConsultasPaciente-SelecionarClinica/SelecionarClinica';
 import { ConsultaVizualizarP } from './src/screens/ConsultaVizulaizarP/ConsultaVizulaizarP';
+import { LocalConsulta } from './src/screens/LocalConsulta/LocalConsulta';
+import { Main } from './src/screens/Main/Main';
 
 
 //instÂncia do StackNavigator
@@ -58,18 +60,26 @@ export default function App() {
     <NavigationContainer>
       <Stack.Navigator screenOptions={{ headerShown: false }}>
         <Stack.Screen
+          name='Login'
+          component={Login}
+          options={{ title: "Login" }}
+        />
+        
+        <Stack.Screen
+          name='Main'
+
+          component={Main}
+
+        />
+        {/* <Stack.Screen
           name='Navegação'
 
           component={Navegacao}
 
           option={{ title: 'Navegacao' }}
-        />
+        /> */}
 
-        <Stack.Screen
-          name='Login'
-          component={Login}
-          options={{ title: "Login" }}
-        />
+
 
         <Stack.Screen
           name='VerificarEmail'
@@ -132,7 +142,12 @@ export default function App() {
           name='ConsultaVizualizarP'
           component={ConsultaVizualizarP}
           options={{ title: "ConsultaVizualizarP" }}
-        />s
+        />
+        <Stack.Screen
+          name='LocalConsulta'
+          component={LocalConsulta}
+          options={{ title: "LocalConsulta" }}
+        />
 
         <Stack.Screen
           name='Home'

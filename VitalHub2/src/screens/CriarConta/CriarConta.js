@@ -22,7 +22,7 @@ export const CriarConta = ({navigation, fieldwidth}) => {
             </BoxInput>
 
 
-            <Button>
+            <Button onPress={() => navigation.navigate("Login")}>
                 <ButtonTitle>Cadastrar</ButtonTitle>
             </Button>
 

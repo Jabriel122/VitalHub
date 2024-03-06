@@ -37,7 +37,7 @@ export const RecuperarSenha = ({ navigation,fieldwidth }) => {
 
 
 
-            <Button>
+            <Button onPress={() => navigation.navigate("VerificarEmail")}>
                 <ButtonTitle>Continuar</ButtonTitle>
             </Button>
 

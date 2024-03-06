@@ -3,13 +3,17 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 import { Navegacao } from './src/screens/Navegacao/Navegacao';
-import { Login } from './src/screens/Login/Login'
-import { RecuperarSenha } from './src/screens/RecuperarSenha/RecuperarSenha';
+
+
 
 // Importar Fonts
 
 import { useFonts, MontserratAlternates_600SemiBold, MontserratAlternates_500Medium, MontserratAlternates_700Bold } from '@expo-google-fonts/montserrat-alternates';
 import { Quicksand_500Medium, Quicksand_600SemiBold, Quicksand_400Regular } from '@expo-google-fonts/quicksand';
+
+//Importar Páginas
+import { Login } from './src/screens/Login/Login'
+import { RecuperarSenha } from './src/screens/RecuperarSenha/RecuperarSenha';
 import { VerificarEmail } from './src/screens/VerificarEmail/VerificarEmail';
 import { RedefinirSenha } from './src/screens/RedefinirSenha/RedefinirSenha';
 import { CriarConta } from './src/screens/CriarConta/CriarConta';

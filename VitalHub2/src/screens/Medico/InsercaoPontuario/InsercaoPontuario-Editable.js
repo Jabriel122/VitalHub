@@ -8,8 +8,12 @@ import { ButtonTitle, Title } from "../../../components/Title/Style"
 import { Button, ButtonEditar } from "../../../components/Button/Style"
 import { LinkOppacityMarginTop, TextAccountLink } from "../../../components/Links/Style"
 import { Input } from "../../../components/Input/Style"
+import { useState } from "react"
 
-export const InsercaoPontuarioEditable = ({fieldwidth}) => {
+export const InsercaoPontuarioEditable = ({navigation}) => {
+    const [descricaoConsulta, setDescicaoConsulta] = useState("")
+    const [dignosticoPaciente, setDignosticoPaciente] = useState("")
+    const [prescricaoMedica, setPrescricaoMedica] = useState("")
     return (
         <Container>
 
@@ -51,7 +55,7 @@ export const InsercaoPontuarioEditable = ({fieldwidth}) => {
                         <ButtonTitle>EDITAR</ButtonTitle>
                     </ButtonEditar>
 
-                    <LinkOppacityMarginTop>
+                    <LinkOppacityMarginTop onPress={() => navigation.navigate("InsercaoPontuario")}>
                         <TextAccountLink>Cancelar</TextAccountLink>
                     </LinkOppacityMarginTop>
 

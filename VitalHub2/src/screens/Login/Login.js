@@ -15,7 +15,7 @@ export const Login = ({ navigation, fieldwidth }) => {
     const [senha, setSenha] = useState("")
 
     async function Login(){
-        navigation.navigate("Main")
+        navigation.replace("Main")
     }
     return (
         <Container>

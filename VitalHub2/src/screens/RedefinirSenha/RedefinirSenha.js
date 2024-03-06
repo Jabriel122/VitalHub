@@ -7,7 +7,7 @@ import { Subtitle } from "../../components/Subtitle/Style";
 import { Input } from "../../components/Input/Style";
 import { Button } from "../../components/Button/Style";
 
-export const RedefinirSenha = () => {
+export const RedefinirSenha = ({navigation }) => {
     return (
         <Container>
             <TopContainer>
@@ -25,7 +25,8 @@ export const RedefinirSenha = () => {
                 <Input placeholder="Nova Senha" />
                 <Input placeholder="Confirmar nova Senha" />
             </BoxMarginDown>
-            <Button>
+
+            <Button onPress={() => navigation.navigate("Login")}>
                 <ButtonTitle>CONFIRMAR NOVA SENHA</ButtonTitle>
             </Button>
         </Container>

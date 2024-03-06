@@ -8,11 +8,7 @@ import { ButtonTitle, Title } from "../../../components/Title/Style"
 import { Button } from "../../../components/Button/Style"
 import { LinkOppacityMarginTop, TextAccountLink } from "../../../components/Links/Style"
 
-export const InsercaoPontuario = ({
-    fieldwidth,
-}
-
-) => {
+export const InsercaoPontuario = ({fieldwidth, navigation}) => {
     return (
         <Container>
 
@@ -53,14 +49,14 @@ export const InsercaoPontuario = ({
                         </TextLabel>
                     </Label>
 
-                    <Button>
-                        <ButtonTitle>SALVAR</ButtonTitle>
+                    <Button onPress={() => navigation.navigate("Home")}>
+                        <ButtonTitle >SALVAR</ButtonTitle>
                     </Button>
-                    <Button>
-                        <ButtonTitle>EDITAR</ButtonTitle>
+                    <Button onPress={() => navigation.navigate("InsercaoPontuarioEditable")}>
+                        <ButtonTitle >EDITAR</ButtonTitle>
                     </Button>
 
-                    <LinkOppacityMarginTop>
+                    <LinkOppacityMarginTop onPress={() => navigation.navigate("Home")}>
                         <TextAccountLink>Cancelar</TextAccountLink>
                     </LinkOppacityMarginTop>
 

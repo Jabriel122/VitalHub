@@ -8,7 +8,7 @@ import { ImageProntuary, ModalBody, ModelData, SubtitleBox } from "./style"
 
 
 
-export const ProntuaryModal = ({ visible, onRequestClose, nome, email, idade, username }) => {
+export const ProntuaryModal = ({ navigation, visible, onRequestClose, nome, email, idade}) => {
 
     return (
         <ModalBody
@@ -31,14 +31,14 @@ export const ProntuaryModal = ({ visible, onRequestClose, nome, email, idade, us
                     </SubtitleBox>
 
 
-                    <Button >
-                        <ButtonQuitTitle>
+                    <Button onPress={() => navigation.navigate("InsercaoPontuario")}>
+                        <ButtonQuitTitle > 
                             Confirmar
                         </ButtonQuitTitle>
                     </Button>
 
 
-                    <LinkOppacityMarginTop onPress={onRequestClose}>
+                    <LinkOppacityMarginTop  onPress={onRequestClose}>
                         <TextAccountLink >Cancelar</TextAccountLink>
                     </LinkOppacityMarginTop>
                 </ModelData>

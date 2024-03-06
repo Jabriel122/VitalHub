@@ -19,7 +19,7 @@ const Consulta = [
     { id: 5, nome: "Diogo", situacao: "cancelado", email:"Diggas@gmail.com", idade: "29 anos",username: "dixx__luquinhasz" },
 ]
 
-export const Home = () => {
+export const Home = ({navigation}) => {
 
     const [statusLista, setStatusLista] = useState("pendente");
     const [modalVisible, setModalVisible] = useState(false);
@@ -114,6 +114,7 @@ export const Home = () => {
                 nome={itemSelecionado?.nome}
                 email={itemSelecionado?.email}
                 idade={itemSelecionado?.idade}
+                navigation={navigation}
                 // username={itemSelecionado?.username}
             />
         </>

@@ -9,7 +9,7 @@ import { CodeContent, InputContent } from "./Styled"
 import { AntDesign } from '@expo/vector-icons';
 import { Box } from "../../components/Box/Style"
 
-export const VerificarEmail = ({ }) => {
+export const VerificarEmail = ({navigation }) => {
 
     return (
         <Container>
@@ -31,7 +31,7 @@ export const VerificarEmail = ({ }) => {
                 <InputContent placeholder="0" keyboardType="numeric" maxLength={1} />
             </CodeContent>
 
-            <Button>
+            <Button onPress={() => navigation.navigate("RedefinirSenha")} >
                 <ButtonTitle>Entrar</ButtonTitle>
             </Button>
 

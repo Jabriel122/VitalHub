@@ -5,7 +5,7 @@ import { Label, TextLabel, TitleLabel } from "../../../components/Label/Style"
 import { ProfilePicture } from "../../../components/PofilePicture/Style"
 import { Subtitle } from "../../../components/Subtitle/Style"
 import { ButtonTitle, Title } from "../../../components/Title/Style"
-import { Button, ButtonEditar } from "../../../components/Button/Style"
+import { Button, ButtonEditar, ButtonEditarOff } from "../../../components/Button/Style"
 import { LinkOppacityMarginTop, TextAccountLink } from "../../../components/Links/Style"
 import { Input } from "../../../components/Input/Style"
 import { useState } from "react"
@@ -48,12 +48,12 @@ export const InsercaoPontuarioEditable = ({navigation}) => {
                         <Input placeholder="Prescrição Médica" />
                     </BoxInput>
 
-                    <Button>
+                    <Button onPress={() => navigation.navigate("InsercaoPontuario")}>
                         <ButtonTitle>SALVAR</ButtonTitle>
                     </Button>
-                    <ButtonEditar>
+                    <ButtonEditarOff>
                         <ButtonTitle>EDITAR</ButtonTitle>
-                    </ButtonEditar>
+                    </ButtonEditarOff>
 
                     <LinkOppacityMarginTop onPress={() => navigation.navigate("InsercaoPontuario")}>
                         <TextAccountLink>Cancelar</TextAccountLink>

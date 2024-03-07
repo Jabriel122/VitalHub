@@ -4,7 +4,7 @@ import { Subtitle } from "../../../components/Subtitle/Style"
 import { ButtonGoogleTitle, ButtonQuitTitle, Title } from "../../../components/Title/Style"
 import { AppointmentBody, AppointmentContainer, AppointmentHead, AppointmentLow, AppointmentMiddle, BoxData, DataSubTitle, DataTitle } from "./Style"
 
-export const ScheduleAppointmentModal = ({ visible, onRequestClose }) => {
+export const ScheduleAppointmentModal = ({ visible, onRequestClose, navigation }) => {
     return (
         <AppointmentBody
             isVisible={visible}
@@ -63,6 +63,7 @@ export const ScheduleAppointmentModal = ({ visible, onRequestClose }) => {
                         color={"496BBA"}
                         mrginTop={30}
                         borderColor={"496BBA"}
+                        onPress={() => navigation.navigate("ConsultasPaciente")}
                     >
                         <ButtonQuitTitle>
                             Confirmar

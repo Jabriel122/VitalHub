@@ -60,7 +60,7 @@ export const BoxShadow = styled.View`
     shadow-radius:15px;
     elevation: 5;
 `
-export const BoxUser = styled.View`
+export const BoxUser = styled.TouchableOpacity`
     flex-direction: row;
     align-items: center;
     

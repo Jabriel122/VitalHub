@@ -14,7 +14,7 @@ export const VerificarEmail = ({navigation }) => {
     return (
         <Container>
             <TopContainer>
-                <Box>
+                <Box onPress={() => navigation.navigate("RecuperarSenha")}>
                     <AntDesign name="close" size={24} color="#34898F" />
                 </Box>
                 <Logo source={require("../../assets/VitalHub_Logo4.png")} />

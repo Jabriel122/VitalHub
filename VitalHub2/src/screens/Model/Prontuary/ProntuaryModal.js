@@ -8,7 +8,13 @@ import { ImageProntuary, ModalBody, ModelData, SubtitleBox } from "./style"
 
 
 
-export const ProntuaryModal = ({ navigation, visible, onRequestClose, nome, email, idade}) => {
+export const ProntuaryModal = ({ navigation, visible, onRequestClose, nome, email, idade, situacao, profile }) => {
+
+    async function handleClose(screen) {
+        await onRequestClose(false)
+
+        navigation.replace(screen)
+    }
 
     return (
         <ModalBody
@@ -16,7 +22,7 @@ export const ProntuaryModal = ({ navigation, visible, onRequestClose, nome, emai
         >
             <ModelContainer>
                 <ModelData>
-                    <ImageProntuary source={{ uri: "https://github.com/Jabriel122.png" }}/>
+                    <ImageProntuary source={{ uri: "https://github.com/Jabriel122.png" }} />
                     <Title>
                         {nome}
                     </Title>
@@ -30,15 +36,27 @@ export const ProntuaryModal = ({ navigation, visible, onRequestClose, nome, emai
                         </Subtitle>
                     </SubtitleBox>
 
+                    {situacao != "pendente" ? (
 
-                    <Button onPress={() => navigation.navigate("InsercaoPontuario")}>
-                        <ButtonQuitTitle > 
-                            Confirmar
-                        </ButtonQuitTitle>
-                    </Button>
+                        <Button onPress={() => handleClose("InsercaoPontuario")}>
+                            <ButtonQuitTitle >
+                                Inserir Pontuario
+                            </ButtonQuitTitle>
+                        </Button>
 
 
-                    <LinkOppacityMarginTop  onPress={onRequestClose}>
+                    ) : (
+                        <Button onPress={() => handleClose("LocalConsulta")}>
+                            <ButtonQuitTitle >
+                                Ver Local da Consulta
+                            </ButtonQuitTitle>
+                        </Button>
+
+                    )}
+
+
+
+                    <LinkOppacityMarginTop onPress={onRequestClose}>
                         <TextAccountLink >Cancelar</TextAccountLink>
                     </LinkOppacityMarginTop>
                 </ModelData>

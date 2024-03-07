@@ -5,7 +5,7 @@ import { Subtitle, SubtitleDoctor } from "../../../components/Subtitle/Style"
 import { AjustTitle, ButtonQuitTitle, Title } from "../../../components/Title/Style"
 import { ImageDoctor, ModalBody, ModelData, SubtitleBox } from "./Style"
 
-export const DoctorModal = ({ visible, onRequestClose, nome, codigo, ocupacao }) => {
+export const DoctorModal = ({ visible, onRequestClose, nome, codigo, ocupacao,situacao }) => {
     return (
 
         <ModalBody
@@ -27,7 +27,7 @@ export const DoctorModal = ({ visible, onRequestClose, nome, codigo, ocupacao })
                         </SubtitleDoctor>
                     </SubtitleBox>
 
-
+                    
                     <ButtonAjust 
                         fieldwidth={100}
                         fieldheigth={44}

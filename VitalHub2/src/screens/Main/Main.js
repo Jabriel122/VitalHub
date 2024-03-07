@@ -5,11 +5,13 @@ import { Perfil02 } from "../Perfil/Perfil02/Perfil02"
 import { Login } from "../Login/Login"
 import { ContentIcon, TextIcon } from "./Style"
 import { FontAwesome, FontAwesome5 } from "@expo/vector-icons"
+import { ConsultasPaciente } from "../ConsultasPaciente/ConsultasPaciente"
 const BottomTab = createBottomTabNavigator()
 export const Main = () => {
     return (
         <BottomTab.Navigator
             initialRouteName="Home"
+            // initialRouteName="ConsultasPaciente"
 
             screenOptions={({ route }) => ({
                 tabBarStyle: { backgroundColor: "#FFFFFF", height: 80, paddingTop: 10, width: "100%", margin: 0, elevation: 0, alignItems: 'center' },
@@ -18,7 +20,7 @@ export const Main = () => {
                 headerShown: false,
 
                 tabBarIcon: ({ focused }) => {
-                    if (route.name === "Home") {
+                    if (route.name === "ConsultasPaciente") {
                         return (
                             <ContentIcon
                                 tabBarActiveBackgroundColor={focused ? "#ECF2FF" : "transparent"}
@@ -48,6 +50,10 @@ export const Main = () => {
                 name="Home"
                 component={Home}
             />
+            {/* <BottomTab.Screen
+                name="ConsultasPaciente"
+                component={ConsultasPaciente}
+            /> */}
 
             {/* Rota do Perfil */}
             <BottomTab.Screen

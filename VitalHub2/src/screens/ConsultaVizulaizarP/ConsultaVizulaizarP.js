@@ -11,7 +11,7 @@ import { CardDefinition } from "../../components/Card/Style"
 import { BoxRowAjust, Divider } from "./Style"
 import { LinkOppacityMarginTop, TextAccountLink } from "../../components/Links/Style"
 
-export const ConsultaVizualizarP = () => {
+export const ConsultaVizualizarP = ({navigation}) => {
     return (
         <Container>
 
@@ -96,7 +96,7 @@ export const ConsultaVizualizarP = () => {
                         </TextLabel>
                     </Label>
 
-                    <LinkOppacityMarginTop >
+                    <LinkOppacityMarginTop onPress={() => navigation.replace("Main")}>
                         <TextAccountLink >Voltar</TextAccountLink>
                     </LinkOppacityMarginTop>
 

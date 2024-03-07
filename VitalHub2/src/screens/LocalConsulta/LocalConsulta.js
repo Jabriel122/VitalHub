@@ -7,8 +7,9 @@ import { Subtitle } from "../../components/Subtitle/Style"
 import { Title } from "../../components/Title/Style"
 import MapView from 'react-native-maps';
 import { StyleSheet, View } from 'react-native';
+import { LinkOppacityMarginTop } from "../../components/Links/Style"
 
-export const LocalConsulta = () => {
+export const LocalConsulta = ({ navigation }) => {
     return (
         <Container>
 
@@ -55,7 +56,9 @@ export const LocalConsulta = () => {
                             </Label>
                         </BoxInput>
 
-
+                        <LinkOppacityMarginTop onPress={() => navigation.replace("Main")}>
+                            <TextAccountLink >Cancelar</TextAccountLink>
+                        </LinkOppacityMarginTop>
                     </BoxRow>
                 </View>
             </ScrollForm>

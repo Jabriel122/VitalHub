@@ -6,7 +6,7 @@ import { ScheduleApointments } from "../../../components/ScheduleApointments/Sch
 import { ButtonQuitTitle, Title } from "../../../components/Title/Style"
 import { AddData, BoxDivider, BoxNivel, ContainerSchedule, DataSchedule, NivelTitle, ScheduleBody } from "./Style"
 
-export const ScheduleModel = ({ visible, onRequestClose }) => {
+export const ScheduleModel = ({ visible, onRequestClose, navigation}) => {
 
     const [status, setStatus] = useState("Rotina");
     return (
@@ -54,7 +54,7 @@ export const ScheduleModel = ({ visible, onRequestClose }) => {
 
                     <BoxDivider>
                         <Button >
-                            <ButtonQuitTitle>
+                            <ButtonQuitTitle onPress={() => navigation.navigate("SelecionarClinica")}>
                                 Confirmar
                             </ButtonQuitTitle>
                         </Button>

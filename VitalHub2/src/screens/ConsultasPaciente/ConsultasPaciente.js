@@ -21,7 +21,7 @@ const Consulta = [
     { id: 4, nome: "Dr.Fabiano", situacao: "realizado", email: "saCul@gmail.com", idade: "9 anos", ocupacao: "NeuroCirugião", codigo:"CRM-09990"},
     { id: 5, nome: "Dra.Patricia", situacao: "cancelado", email: "Diggas@gmail.com", idade: "29 anos", ocupacao: "Quiroprta" , codigo:"CRM-78912"},
 ]
-export const ConsultasPaciente = () => {
+export const ConsultasPaciente = ({navigation}) => {
     const [statusLista, setStatusLista] = useState("pendente");
     const [modalVisible, setModalVisible] = useState(false);
     const [modalPromptuary, setModalPromptuary] = useState(false);
@@ -32,7 +32,7 @@ export const ConsultasPaciente = () => {
         <>
             <ContainerFB>
                 {/* Header */}
-                <Header />
+                <Header navigation ={navigation}/>
 
                 <CalendarHome />
 
@@ -64,6 +64,7 @@ export const ConsultasPaciente = () => {
                                 // modalVisible={() => setModalVisible(modalVisible)}
                                 situacao={item.situacao}
                                 nome={item.nome}
+                                profile={profile}
                                 statusLista={statusLista}
                                 onPressCancel={() => setModalVisible(true)}
                                 onPressDoctor={() => {
@@ -116,6 +117,7 @@ export const ConsultasPaciente = () => {
             </ContainerFB >
             <ScheduleModel
                 visible={agendarConsultaModla}
+                navigation = {navigation}
                 onRequestClose={() => { setAgendarConsultaModla(false) }}
             />
 
@@ -130,6 +132,8 @@ export const ConsultasPaciente = () => {
                 nome={itemSelecionado?.nome}
                 email={itemSelecionado?.email}
                 idade={itemSelecionado?.idade}
+                situacao={itemSelecionado?.situacao}
+                navigation = {navigation}
             // username={itemSelecionado?.username}
             />
 
@@ -139,6 +143,7 @@ export const ConsultasPaciente = () => {
                 nome={itemSelecionado?.nome}
                 codigo={itemSelecionado?.codigo}
                 ocupacao={itemSelecionado?.ocupacao}
+                situacao={itemSelecionado?.situacao}
             />
         </>
     )

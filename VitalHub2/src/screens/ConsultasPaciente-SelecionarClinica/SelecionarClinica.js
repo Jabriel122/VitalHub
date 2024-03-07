@@ -202,6 +202,7 @@ export const SelecionarClinica = () => {
 
             <ScheduleAppointmentModal
                 visible={modalAppointementVisible}
+                navigation={navigation}
                 onRequestClose={()=> (setModalAppointementVisible(false))}
             />
         </>

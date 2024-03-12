@@ -160,6 +160,7 @@ export const Home = ({ navigation }) => {
                 codigo={itemSelecionado?.codigo}
                 ocupacao={itemSelecionado?.ocupacao}
                 situacao={itemSelecionado?.situacao}
+                navigation={navigation}
             />
         </>
     )

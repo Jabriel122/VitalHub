@@ -54,7 +54,7 @@ export const ScheduleModel = ({ visible, onRequestClose, navigation}) => {
 
                     <BoxDivider>
                         <Button >
-                            <ButtonQuitTitle onPress={() => navigation.navigate("SelecionarClinica")}>
+                            <ButtonQuitTitle onPress={() => navigation.navigate('SelecionarClinica')}>
                                 Confirmar
                             </ButtonQuitTitle>
                         </Button>

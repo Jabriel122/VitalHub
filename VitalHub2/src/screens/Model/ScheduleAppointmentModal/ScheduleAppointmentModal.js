@@ -63,7 +63,7 @@ export const ScheduleAppointmentModal = ({ visible, onRequestClose, navigation }
                         color={"496BBA"}
                         mrginTop={30}
                         borderColor={"496BBA"}
-                        onPress={() => navigation.navigate("ConsultasPaciente")}
+                        onPress={() => navigation.navigate('ConsultasPaciente')}
                     >
                         <ButtonQuitTitle>
                             Confirmar

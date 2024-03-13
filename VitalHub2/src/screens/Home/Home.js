@@ -143,6 +143,7 @@ export const Home = ({ navigation }) => {
                 nome={itemSelecionado?.nome}
                 email={itemSelecionado?.email}
                 idade={itemSelecionado?.idade}
+                situacao={statusLista}
                 profile={profile}
                 navigation={navigation}
             // username={itemSelecionado?.username}

@@ -29,6 +29,7 @@ import { SelecionarClinica } from './src/screens/ConsultasPaciente-SelecionarCli
 import { ConsultaVizualizarP } from './src/screens/ConsultaVizulaizarP/ConsultaVizulaizarP';
 import { LocalConsulta } from './src/screens/LocalConsulta/LocalConsulta';
 import { Main } from './src/screens/Main/Main';
+import {  Cameras } from './src/screens/Camera/Camera';
 
 
 //instÂncia do StackNavigator
@@ -163,6 +164,11 @@ export default function App() {
           name='Teste'
           component={Teste}
           options={{ title: "Teste" }}
+        />
+        <Stack.Screen
+          name='Cameras'
+          component={Cameras}
+          options={{ title: "Cameras" }}
         />
 
       </Stack.Navigator>

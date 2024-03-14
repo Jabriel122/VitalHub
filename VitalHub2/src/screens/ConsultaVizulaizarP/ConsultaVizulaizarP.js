@@ -77,6 +77,7 @@ export const ConsultaVizualizarP = ({navigation}) => {
                                 marginBottom={0}
                                 color={"FFFFFF"}
                                 marginTop={0}
+                                onPress={() => navigation.navigate("Cameras")}
 
                             >
                                 Enviar

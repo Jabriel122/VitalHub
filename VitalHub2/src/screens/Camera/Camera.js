@@ -1,40 +1,112 @@
-import { useEffect, useState } from "react";
-import { Container, ModelContainer } from "../../components/Container/Style"
+import { useEffect, useRef, useState } from "react";
+import { CameraContianer, Container, ModelContainer } from "../../components/Container/Style"
 import { Camera, CameraOrientation, CameraType } from 'expo-camera';
-import { BoxBtnCamera } from "./Style";
+import { BoxBtnCamera, CameraBtn } from "./Style";
 import { Title } from "../../components/Title/Style";
-import { StyleSheet } from "react-native";
+import { StyleSheet, Text, TouchableOpacity } from "react-native";
+import { FontAwesome } from '@expo/vector-icons'
+import { MaterialCommunityIcons } from '@expo/vector-icons';
+import * as MediaLibrary from 'expo-media-library'
+import { CameraModal } from "../Model/CameraModal/CameraModal";
 
-export const Cameras = () => {
+export const Cameras = ({navigation}) => {
     const [tipoCamera, setTipoCamera] = useState(Camera.Constants.Type.front)
-    const [photo, setPhoto] = useState(null)
+    const [photo, setPhoto] = useState()
+    const [cameraModal, setCameraModal] = useState(false)
+
+    const cameraRef = useRef(null)
+
+    async function CapturePhoto() {
+        //Verificando se a CameraRef está vázio
+        if (cameraRef) {
+            const data = await cameraRef.current.takePictureAsync()
+            
+            setPhoto(data.uri)
+
+            setCameraModal(true)
+            // console.log(data.uri)
+            if(photo == null){
+                console.log("Algo deu errado nessa merda do caraio filha da puta")
+            }else{
+                console.log(data.uri)
+                console.log(photo)
+                console.log("Deu certo eu acho")
+            }
+            
+            // console.log(data)
+        }
+
+    }
+
+    async function SavePhoto() {
+        //Verificação se tem uma foto para ser salva
+        if (photo) {
+            await MediaLibrary.createAssetAsync(photo)
+                .then(() => {
+                    alert('Sucesso', 'Foto salva na galeria')
+                }).catch(error => {
+                    alert("Erro ao processar foto")
+                    console.log(error)
+                })
+        }
+    }
+
+    async function ClearPhoto() {
+        // setPhoto(null)
+
+        setCameraModal(false)
+    }
 
     useEffect(() => {
         (async () => {
             const { status: cameraStatus } = await Camera.requestCameraPermissionsAsync();
 
-            //   const {status: mediaStatus} = await MediaLibrary.requestPermissionsAsync();
+            const { status: mediaStatus } = await MediaLibrary.requestPermissionsAsync();
         })();
     }, [])
+
     return (
-        <ModelContainer>
-            <Title>AQUI</Title>
-            <Camera
-                type={tipoCamera}
-                style={styles.CameraAjust}
-                ratio="16:9"
-            >
-                <BoxBtnCamera>
+        <>
+            <CameraContianer>
+                {/* <Title>AQUI</Title> */}
+                <Camera
+                    ref={cameraRef}
+                    type={tipoCamera}
+                    style={styles.CameraAjust}
+                    ratio="16:9"
+                >
+                    <BoxBtnCamera>
+                        <CameraBtn onPress={() => setTipoCamera(tipoCamera == CameraType.front ? CameraType.back : CameraType.front)}>
+                            <MaterialCommunityIcons name="camera-flip-outline" size={23} color={'#fff'} />
+                        </CameraBtn>
 
-                </BoxBtnCamera>
+                        <CameraBtn onPress={() => CapturePhoto()}>
+                            <FontAwesome name='camera' size={23} color={'#fff'} />
+                        </CameraBtn>
 
-            </Camera>
-        </ModelContainer>
+                        <CameraBtn onPress={() => navigation.navigate("ConsultaVizualizarP")}>
+                            <Title>SAIR </Title>
+                        </CameraBtn>
+                       
+
+                    </BoxBtnCamera>
+                </Camera>
+            </CameraContianer>
+
+            <CameraModal
+                uriPhoto={photo}
+                visible={cameraModal}
+                onRequestClose={() => { ClearPhoto(false) }}
+                onRequestSave={() => {SavePhoto()}}
+
+            />
+        </>
+
     )
 }
 
 const styles = StyleSheet.create({
-    CameraAjust:{
+    CameraAjust: {
         flex: 1,
         width: '100%',
         height: '80%'

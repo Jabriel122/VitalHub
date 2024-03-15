@@ -10,8 +10,12 @@ import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { CardDefinition } from "../../components/Card/Style"
 import { BoxRowAjust, Divider } from "./Style"
 import { LinkOppacityMarginTop, TextAccountLink } from "../../components/Links/Style"
+import { useEffect, useState } from "react"
 
 export const ConsultaVizualizarP = ({navigation}) => {
+    const [ uriCameraCapture, setUriCameraCapture] = useState(null)
+
+    useEffect(() =>{})
     return (
         <Container>
 

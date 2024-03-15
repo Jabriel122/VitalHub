@@ -69,8 +69,13 @@ export const ModelContainer = styled.View`
     width: 100%;
     justify-content: center;
     align-items: center;
-    
+`
 
+export const CameraContianer = styled.View`
+    flex: 1;
+    background-color: #fff;
+    align-items: 'center';
+    justify-content: 'center';
 `
 
 

@@ -5,7 +5,8 @@ import { Subtitle } from "../../../components/Subtitle/Style"
 import { ButtonQuitTitle, Title } from "../../../components/Title/Style"
 import { ModalBody, ModelData } from "./Style"
 
-export const CancelarConsutlaModel = ({ visible, onRequestClose}) => {
+export const CancelarConsutlaModel = ({ visible, onRequestClose, onPressConfirma}) => {
+
 
     return (
         <ModalBody
@@ -21,7 +22,7 @@ export const CancelarConsutlaModel = ({ visible, onRequestClose}) => {
                     </Subtitle>
 
                     <Button >
-                        <ButtonQuitTitle>
+                        <ButtonQuitTitle onPress ={onPressConfirma}>
                             Confirmar
                         </ButtonQuitTitle>
                     </Button>

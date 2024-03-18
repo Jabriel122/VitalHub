@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { CameraContianer, Container, ModelContainer } from "../../components/Container/Style"
 import { Camera, CameraOrientation, CameraType } from 'expo-camera';
 import { BoxBtnCamera, CameraBtn } from "./Style";
-import { Title } from "../../components/Title/Style";
+import { AjustTitle, Title } from "../../components/Title/Style";
 import { StyleSheet, Text, TouchableOpacity } from "react-native";
 import { FontAwesome } from '@expo/vector-icons'
 import { MaterialCommunityIcons } from '@expo/vector-icons';
@@ -85,7 +85,14 @@ export const Cameras = ({navigation}) => {
                         </CameraBtn>
 
                         <CameraBtn onPress={() => navigation.navigate("ConsultaVizualizarP")}>
-                            <Title>SAIR </Title>
+                            <AjustTitle
+                                fontSize={14}
+                                color={"fff"}
+                                marginBottom={0}
+                                marginTop={0}
+                            > 
+                                Sair
+                            </AjustTitle>
                         </CameraBtn>
                        
 

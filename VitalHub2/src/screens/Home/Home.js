@@ -14,6 +14,7 @@ import { ProntuaryModal } from "../Model/Prontuary/ProntuaryModal"
 import { NewConsul } from "../ConsultasPaciente/Style"
 import { ScheduleModel } from "../Model/ScheduleModel/ScheduleModel"
 import { DoctorModal } from "../Model/DoctorModal/DoctorModal"
+import * as Notification from "expo-notifications";
 
 const Consulta = [
     { id: 1, nome: "GABS", situacao: "pendente", email: "gbielmarch@gmail.com", idade: "19 anos", username: "dixx_marchasss" },
@@ -22,6 +23,23 @@ const Consulta = [
     { id: 4, nome: "Lucass", situacao: "realizado", email: "saCul@gmail.com", idade: "9 anos", username: "lusk4_xnr" },
     { id: 5, nome: "Diogo", situacao: "cancelado", email: "Diggas@gmail.com", idade: "29 anos", username: "dixx__luquinhasz" },
 ]
+
+//Solicitar as permissões de notidicação ao iniciar o app
+Notification.requestPermissionsAsync();
+
+//Definir como as notificações devem ser tratadas quando recebidas
+Notification.setNotificationHandler({
+    handleNotification: async () => ({
+        //Mostra o alerta quando a notificação for recebida
+        shouldShowAlert: true,
+
+        //Ele reproduz ou não um som ao receber a notificação
+        shouldPlaySound: false,
+
+        //AConfigura número de notificações no ícone do app
+        shouldSetBadge: false
+    })
+})
 
 export const Home = ({ navigation }) => {
 
@@ -33,6 +51,34 @@ export const Home = ({ navigation }) => {
     const [doctorModal, setDoctorModal] = useState(false);
 
     const [profile, setProfile] = useState("Paciente")
+
+    const handleNotification = async () => {
+        //Obtem o status das permissões
+        const { status } = await Notification.getPermissionsAsync();
+
+        //Verifica se o usuario concedeu permissão para notificação
+        if (status !== "granted") {
+            alert("Você não deixou  as notificações ativas");
+            return;
+        }
+
+        // //obter o token de envio de notificação 
+        // const token = await Notification.getExpoPushTokenAsync()
+        // console.log(token);
+
+        
+
+        //Agendar uma notificação para ser exibida após 5 segundo 
+        await Notification.scheduleNotificationAsync({
+            content: {
+                title: "Consulta Cancelada",
+                body: "Consulta foi cancelada"
+            },
+            trigger: {
+                seconds: 5
+            }
+        })
+    }
 
 
     return (
@@ -80,6 +126,7 @@ export const Home = ({ navigation }) => {
                                 statusLista={statusLista}
                                 profile={profile}
                                 onPressCancel={() => setModalVisible(true)}
+                                
                             /> : <></>}
 
                         />
@@ -136,6 +183,7 @@ export const Home = ({ navigation }) => {
             <CancelarConsutlaModel
                 visible={modalVisible}
                 onRequestClose={() => { setModalVisible(false) }}
+                onPressConfirma={handleNotification}
             />
             <ProntuaryModal
                 visible={modalPromptuary}
